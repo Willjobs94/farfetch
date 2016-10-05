@@ -156,6 +156,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Farfetch\Farfetch.csproj">
       <Name>Farfetch</Name>
+      <Project>{0FDEA42E-4A6B-4E8A-BCC1-43D5A790E46A}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
