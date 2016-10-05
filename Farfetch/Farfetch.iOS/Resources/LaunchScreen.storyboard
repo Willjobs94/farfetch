@@ -36,6 +36,7 @@
         <image name="Icon-Small-40.png" width="40" height="40"/>
         <image name="Icon-Small.png" width="29" height="29"/>
         <image name="launchscreen.png" width="750" height="1334"/>
+        <image name="homescreenbackground.png" width="750" height="1334"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedScreenMetrics key="destination" type="retina47"/>

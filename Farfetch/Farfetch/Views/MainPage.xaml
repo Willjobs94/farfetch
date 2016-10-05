@@ -1,11 +1,55 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Farfetch.Views.MainPage"
-             Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+             Title="MainPage"
+		     BackgroundImage="homescreenbackground.png">
+	<StackLayout>		
+	  <StackLayout
+			   VerticalOptions="StartAndExpand">
+		<StackLayout 
+				Margin="20,50,20,0">
+		   	<Label 
+					Text="THE WORLD'S BEST BOUTIQUES CURATED FOR YOU"
+					TextColor="White" 
+					FontSize="30"
+					FontAttributes="Bold"
+					VerticalOptions="Center"/>
+			
+		</StackLayout>
+	 </StackLayout>
+		<StackLayout 
+				Orientation="Horizontal"
+				VerticalOptions="End">
+			
+			<Button 	
+				Text="SIGN IN"
+				TextColor="White"
+				FontSize="Medium"
+				FontAttributes="Bold"
+				HorizontalOptions="FillAndExpand"
+				BackgroundColor="#03A9F4"
+				BorderRadius="0"/>
+			
+			<Button 
+				Text="REGISTER"
+				TextColor="White"
+				FontSize="Medium"
+				FontAttributes="Bold"
+				BackgroundColor="#03A9F4"
+				BorderRadius="0"
+				HorizontalOptions="FillAndExpand"/>
+			
+		</StackLayout>
+<!--									<Image 
+				BackgroundColor="Transparent"
+			Source="launchscreen.png"
+			VerticalOptions="Start"/>-->
+
+
   </StackLayout>
+
+
 </ContentPage>
