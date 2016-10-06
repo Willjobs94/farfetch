@@ -5,61 +5,85 @@
 		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
 		prism:ViewModelLocator.AutowireViewModel="True" 
 		x:Class="Farfetch.Views.HomeTabPage">
-	<StackLayout>
+	<StackLayout VerticalOptions="Fill" Spacing="0">
+		<SearchBar 
+			Placeholder="Search Here">
 
-		<StackLayout >
-		</StackLayout>
-	<RelativeLayout>
-		<Image 				
-			Source="accessories" 
-			WidthRequest="400" 
-			HeightRequest="400" 
-			Aspect="AspectFill" 
-			Opacity="0.9"/>
-		
-		<StackLayout 
-					WidthRequest="400"
-					HeightRequest="500">
-		    <StackLayout
-						VerticalOptions="CenterAndExpand"
-						HorizontalOptions="Center">
-					<Frame
-							BackgroundColor="#992F2F2F"
-							Padding="6">
+		</SearchBar>
 
-						<Label						
-							Text="ACCESSORIES"
-							TextColor="White"
-							FontAttributes="Bold"
-							FontSize="24"/>
-					</Frame>
-			</StackLayout>		   
+		<StackLayout>
+			<StackLayout
+					BackgroundColor="#F5F5F5"			
+				   VerticalOptions="StartAndExpand"
+					Padding="15">
+				<Label 
+					TextColor="#F78D87"
+					Text="SALE | UP TO 50% OFF" 
+					HorizontalTextAlignment="Center"
+					FontSize="Medium"
+					FontAttributes="Bold"
+					/>
+			</StackLayout>
 		</StackLayout>
+					
+		<RelativeLayout>
+
+			<Image 				
+				Source="accessories" 
+				WidthRequest="400" 
+				HeightRequest="350" 
+				Aspect="AspectFill" 
+				Opacity="0.9"/>
+				
+			<StackLayout 
+
+						WidthRequest="400"
+						HeightRequest="350">
+			    <StackLayout
+							VerticalOptions="CenterAndExpand"
+							HorizontalOptions="Center">
+						<Frame
+								BackgroundColor="#992F2F2F"
+								Padding="5, 13, 5, 13">
+
+							<Label						
+								Text="ACCESSORIES"
+								TextColor="White"
+								FontAttributes="Bold"
+								FontSize="19"/>
+						</Frame>
+				</StackLayout>		   
+			</StackLayout>
   </RelativeLayout>
 
-		<StackLayout VerticalOptions="EndAndExpand">
-			<Label 
-				
+  <StackLayout VerticalOptions="CenterAndExpand">
+			<Label 				
 				Text="NEW IN TODAY"
 				Font="18"
 				FontAttributes="Bold"
 				HorizontalOptions="Center"/>
+		</StackLayout>
+		<StackLayout 
+
+				VerticalOptions="EndAndExpand">
+
 			<StackLayout 
+					Spacing="1"
 					Orientation="Horizontal">
 				<Image 					
 					Source="homescreenbackground.png"
-					Margin="-2"
+	
 					WidthRequest="125"
 					HeightRequest="150"
 					Aspect="AspectFill"/>
 				<Image 
-					Margin="-2"
+
 					Source="homescreenbackground.png"
 					WidthRequest="125"
 					HeightRequest="150"
 					Aspect="AspectFill"/>			
 				<Image 
-					Margin="-2"	
+	
 					Source="homescreenbackground.png"
 					WidthRequest="125"
 					HeightRequest="150"
