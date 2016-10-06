@@ -4,7 +4,6 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Farfetch.Views.MainPage"
-             Title="MainPage"
 		     BackgroundImage="homescreenbackground">
 	<StackLayout>		
 	  <StackLayout
@@ -24,7 +23,8 @@
 				Orientation="Horizontal"
 				VerticalOptions="End">
 			
-			<Button 	
+			<Button 
+				Command="{Binding SignInCommand}"
 				Text="SIGN IN"
 				TextColor="White"
 				FontSize="Medium"
@@ -34,6 +34,8 @@
 				BorderRadius="0"/>
 			
 			<Button 
+				Command="{Binding RegisterCommand}"
+					
 				Text="REGISTER"
 				TextColor="White"
 				FontSize="Medium"

@@ -4,11 +4,18 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
 		prism:ViewModelLocator.AutowireViewModel="True" 
-		x:Class="Farfetch.Views.HomeTabPage">
-	<StackLayout VerticalOptions="Fill" Spacing="0">
+		x:Class="Farfetch.Views.HomeTabPage"
+		Title="Home" Icon="monkeyicon">
+	
+	<ContentPage.Icon>
+		<OnPlatform x:TypeArguments="FileImageSource"
+			iOS="monkeyicon"/>
+	</ContentPage.Icon>
+	<StackLayout 
+			VerticalOptions="StartAndExpand" 
+			Spacing="0">
 		<SearchBar 
 			Placeholder="Search Here">
-
 		</SearchBar>
 
 		<StackLayout>
@@ -31,14 +38,14 @@
 			<Image 				
 				Source="accessories" 
 				WidthRequest="400" 
-				HeightRequest="350" 
+				HeightRequest="300" 
 				Aspect="AspectFill" 
 				Opacity="0.9"/>
 				
 			<StackLayout 
 
 						WidthRequest="400"
-						HeightRequest="350">
+						HeightRequest="300">
 			    <StackLayout
 							VerticalOptions="CenterAndExpand"
 							HorizontalOptions="Center">
@@ -64,7 +71,6 @@
 				HorizontalOptions="Center"/>
 		</StackLayout>
 		<StackLayout 
-
 				VerticalOptions="EndAndExpand">
 
 			<StackLayout 

@@ -1,5 +1,6 @@
 ﻿using Prism.Unity;
 using Farfetch.Views;
+using Xamarin.Forms;
 
 namespace Farfetch
 {
@@ -11,12 +12,17 @@ namespace Farfetch
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("MainPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<HomeTabPage>();
+			Container.RegisterTypeForNavigation<NavigationPage>();
+			Container.RegisterTypeForNavigation<MainTabbedPage>();
         }
+
+
     }
 }
