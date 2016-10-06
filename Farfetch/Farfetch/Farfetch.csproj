@@ -37,6 +37,18 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="Views\MainTabbedPage.xaml.cs">
+      <DependentUpon>MainTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tabs\HomeTabPage.xaml.cs">
+      <DependentUpon>HomeTabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tabs\BoutiqueTabPage.xaml.cs">
+      <DependentUpon>BoutiqueTabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TEst.xaml.cs">
+      <DependentUpon>TEst.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -46,6 +58,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\MainTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Tabs\HomeTabPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Tabs\BoutiqueTabPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TEst.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">
@@ -92,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Tabs\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

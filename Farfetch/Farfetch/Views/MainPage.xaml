@@ -5,18 +5,18 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Farfetch.Views.MainPage"
              Title="MainPage"
-		     BackgroundImage="homescreenbackground.png">
+		     BackgroundImage="homescreenbackground">
 	<StackLayout>		
 	  <StackLayout
 			   VerticalOptions="StartAndExpand">
 		<StackLayout 
 				Margin="20,50,20,0">
 		   	<Label 
+						
 					Text="THE WORLD'S BEST BOUTIQUES CURATED FOR YOU"
 					TextColor="White" 
 					FontSize="30"
-					FontAttributes="Bold"
-					VerticalOptions="Center"/>
+					FontAttributes="Bold"/>
 			
 		</StackLayout>
 	 </StackLayout>

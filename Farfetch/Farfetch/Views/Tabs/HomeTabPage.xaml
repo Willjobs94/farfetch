@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
+		prism:ViewModelLocator.AutowireViewModel="True" 
+		x:Class="Farfetch.Views.HomeTabPage">
+	<StackLayout>
+
+		<StackLayout >
+		</StackLayout>
+	<RelativeLayout>
+		<Image 				
+			Source="accessories" 
+			WidthRequest="400" 
+			HeightRequest="400" 
+			Aspect="AspectFill" 
+			Opacity="0.9"/>
+		
+		<StackLayout 
+					WidthRequest="400"
+					HeightRequest="500">
+		    <StackLayout
+						VerticalOptions="CenterAndExpand"
+						HorizontalOptions="Center">
+					<Frame
+							BackgroundColor="#992F2F2F"
+							Padding="6">
+
+						<Label						
+							Text="ACCESSORIES"
+							TextColor="White"
+							FontAttributes="Bold"
+							FontSize="24"/>
+					</Frame>
+			</StackLayout>		   
+		</StackLayout>
+  </RelativeLayout>
+
+		<StackLayout VerticalOptions="EndAndExpand">
+			<Label 
+				
+				Text="NEW IN TODAY"
+				Font="18"
+				FontAttributes="Bold"
+				HorizontalOptions="Center"/>
+			<StackLayout 
+					Orientation="Horizontal">
+				<Image 					
+					Source="homescreenbackground.png"
+					Margin="-2"
+					WidthRequest="125"
+					HeightRequest="150"
+					Aspect="AspectFill"/>
+				<Image 
+					Margin="-2"
+					Source="homescreenbackground.png"
+					WidthRequest="125"
+					HeightRequest="150"
+					Aspect="AspectFill"/>			
+				<Image 
+					Margin="-2"	
+					Source="homescreenbackground.png"
+					WidthRequest="125"
+					HeightRequest="150"
+					Aspect="AspectFill"/>
+				
+			</StackLayout>
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

@@ -13,7 +13,6 @@ namespace Farfetch.ViewModels
 
 		public void OnNavigatedTo(NavigationParameters parameters)
 		{
-
 		}
 	}
 }
