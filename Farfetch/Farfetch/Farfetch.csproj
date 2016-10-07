@@ -46,6 +46,7 @@
     <Compile Include="Views\Tabs\BoutiqueTabPage.xaml.cs">
       <DependentUpon>BoutiqueTabPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\HomeTabPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

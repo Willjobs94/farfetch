@@ -4,25 +4,25 @@ using Xamarin.Forms;
 
 namespace Farfetch
 {
-    public partial class App : PrismApplication
-    {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+	public partial class App : PrismApplication
+	{
+		public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
-        protected override void OnInitialized()
-        {
-            InitializeComponent();
+		protected override void OnInitialized()
+		{
+			InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage");
-        }
+			NavigationService.NavigateAsync("MainPage");
+		}
 
-        protected override void RegisterTypes()
-        {
-            Container.RegisterTypeForNavigation<MainPage>();
+		protected override void RegisterTypes()
+		{
+			Container.RegisterTypeForNavigation<MainPage>();
 			Container.RegisterTypeForNavigation<HomeTabPage>();
 			Container.RegisterTypeForNavigation<NavigationPage>();
 			Container.RegisterTypeForNavigation<MainTabbedPage>();
-        }
+		}
 
 
-    }
+	}
 }

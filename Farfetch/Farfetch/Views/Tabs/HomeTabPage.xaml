@@ -5,7 +5,7 @@
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.HomeTabPage"
-	Title="Home"
+	Title="{Binding Title}"
 	Icon="monkeyicon">
 	<ContentPage.Icon>
 		<OnPlatform
@@ -16,7 +16,7 @@
 		VerticalOptions="StartAndExpand"
 		Spacing="0">
 		<SearchBar
-			Placeholder="Search Here">
+			Placeholder="Search here">
 		</SearchBar>
 		<StackLayout>
 			<StackLayout
@@ -25,7 +25,7 @@
 				Padding="15">
 				<Label
 					TextColor="#F78D87"
-					Text="SALE | UP TO 50% OFF"
+					Text="{Binding OfferTitle}"
 					HorizontalTextAlignment="Center"
 					FontSize="Medium"
 					FontAttributes="Bold" />
@@ -33,7 +33,7 @@
 		</StackLayout>
 		<RelativeLayout>
 			<Image
-				Source="accessories"
+				Source="{Binding OfferImageUri}"
 				WidthRequest="400"
 				HeightRequest="300"
 				Aspect="AspectFill"
@@ -48,7 +48,7 @@
 						BackgroundColor="#992F2F2F"
 						Padding="5, 13, 5, 13">
 						<Label
-							Text="ACCESSORIES"
+							Text="{Binding OfferCategory}"
 							TextColor="White"
 							FontAttributes="Bold"
 							FontSize="19" />
