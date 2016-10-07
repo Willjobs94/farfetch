@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <ContentPage
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -7,84 +8,174 @@
 	x:Class="Farfetch.Views.HomeTabPage"
 	Title="{Binding Title}"
 	Icon="monkeyicon">
+
 	<ContentPage.Icon>
+
 		<OnPlatform
 			x:TypeArguments="FileImageSource"
 			iOS="monkeyicon" />
+
 	</ContentPage.Icon>
+
 	<StackLayout
 		VerticalOptions="StartAndExpand"
 		Spacing="0">
+
 		<SearchBar
 			Placeholder="Search here">
 		</SearchBar>
+
 		<StackLayout>
+
 			<StackLayout
 				BackgroundColor="#F5F5F5"
 				VerticalOptions="StartAndExpand"
 				Padding="15">
+
 				<Label
 					TextColor="#F78D87"
 					Text="{Binding OfferTitle}"
 					HorizontalTextAlignment="Center"
 					FontSize="Medium"
 					FontAttributes="Bold" />
+
 			</StackLayout>
+
 		</StackLayout>
+
 		<RelativeLayout>
+
 			<Image
 				Source="{Binding OfferImageUri}"
 				WidthRequest="400"
 				HeightRequest="300"
 				Aspect="AspectFill"
 				Opacity="0.9" />
+
 			<StackLayout
 				WidthRequest="400"
 				HeightRequest="300">
+
 				<StackLayout
 					VerticalOptions="CenterAndExpand"
 					HorizontalOptions="Center">
+
 					<Frame
 						BackgroundColor="#992F2F2F"
 						Padding="5, 13, 5, 13">
+
 						<Label
 							Text="{Binding OfferCategory}"
 							TextColor="White"
 							FontAttributes="Bold"
 							FontSize="19" />
+
 					</Frame>
+
 				</StackLayout>
+
 			</StackLayout>
+
 		</RelativeLayout>
+
 		<StackLayout
-			VerticalOptions="CenterAndExpand">
-			<Label
-				Text="NEW IN TODAY"
-				Font="18"
-				FontAttributes="Bold"
-				HorizontalOptions="Center" />
-		</StackLayout>
-		<StackLayout
-			VerticalOptions="EndAndExpand">
+			BackgroundColor="#F5F5F5"
+			Padding="1"
+			Spacing="1">
+			
+			<StackLayout
+				Padding="6"
+				BackgroundColor="White">
+
+				<Label
+					Text="NEW IN TODAY"
+					Font="Small"
+					FontAttributes="Bold"
+					HorizontalTextAlignment="Center" />
+
+			</StackLayout>
+			
 			<StackLayout
 				Spacing="1"
 				Orientation="Horizontal">
-				<Image
-					Source="homescreenbackground.png"
-					WidthRequest="125"
-					HeightRequest="150"
-					Aspect="AspectFill" />
-				<Image
-					Source="homescreenbackground.png"
-					WidthRequest="125"
-					HeightRequest="150"
-					Aspect="AspectFill" />
-				<Image
-					Source="homescreenbackground.png"
-					WidthRequest="125"
-					HeightRequest="150"
-					Aspect="AspectFill" />
+
+				<StackLayout
+					BackgroundColor="White">
+					<Image
+						Source="jacket"
+						WidthRequest="125"
+						HeightRequest="150"
+						Aspect="AspectFit" />
+
+					<Label
+						Text="JACKET"
+						FontSize="Small"
+						HorizontalTextAlignment="Center"
+						FontAttributes="Bold" />
+
+					<Label
+						Text="$750"
+						TextColor="#5C5C5C"
+						FontSize="Micro"
+						FontAttributes="Bold"
+						Margin="0, 8, 0, 8"
+						HorizontalTextAlignment="Center" />
+
+				</StackLayout>
+								<StackLayout
+					BackgroundColor="White">
+
+					<Image
+						Source="bag"
+						WidthRequest="125"
+						HeightRequest="150"
+						Aspect="AspectFit" />
+
+					<Label
+						Text="JACKET"
+						FontSize="Small"
+						HorizontalTextAlignment="Center"
+						FontAttributes="Bold" />
+
+					<Label
+						Text="$750"
+						TextColor="#5C5C5C"
+						FontSize="Micro"
+						FontAttributes="Bold"
+						Margin="0, 8, 0, 8"
+						HorizontalTextAlignment="Center" />
+
+				</StackLayout>
+								<StackLayout
+					BackgroundColor="White">
+
+					<Image
+						Source="blouse"
+						WidthRequest="125"
+						HeightRequest="150"
+						Aspect="AspectFit" />
+
+					<Label
+						Text="JACKET"
+						FontSize="Small"
+						HorizontalTextAlignment="Center"
+						FontAttributes="Bold" />
+
+					<Label
+						Text="$750"
+						TextColor="#5C5C5C"
+						FontSize="Micro"
+						FontAttributes="Bold"
+						Margin="0, 8, 0, 8"
+						HorizontalTextAlignment="Center" />
+
+				</StackLayout>
+	
+
 			</StackLayout>
+
 		</StackLayout>
+
 	</StackLayout>
+
 </ContentPage>
