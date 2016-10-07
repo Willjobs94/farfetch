@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-		xmlns:views="clr-namespace:Farfetch.Views;assembly=Farfetch"
-		prism:ViewModelLocator.AutowireViewModel="True" 
-		x:Class="Farfetch.Views.MainTabbedPage">
-	
-	<NavigationPage Title="Home" Icon="monkeyicon.png"
-			BackgroundImage="monkeyicon"  >		
+<TabbedPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	xmlns:views="clr-namespace:Farfetch.Views;assembly=Farfetch"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	x:Class="Farfetch.Views.MainTabbedPage">
+	<NavigationPage
+		Title="Home"
+		Icon="monkeyicon.png"
+		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:HomeTabPage />
 		</x:Arguments>
 	</NavigationPage>
-		<NavigationPage Title="SHOP" Icon="monkeyicon.png"
-			BackgroundImage="monkeyicon"  >		
+	<NavigationPage
+		Title="SHOP"
+		Icon="monkeyicon.png"
+		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:HomeTabPage />
 		</x:Arguments>
 	</NavigationPage>
-		<NavigationPage Title="DESIGNERS" Icon="monkeyicon.png"
-			BackgroundImage="monkeyicon"  >		
+	<NavigationPage
+		Title="DESIGNERS"
+		Icon="monkeyicon.png"
+		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:HomeTabPage />
 		</x:Arguments>
 	</NavigationPage>
-		<NavigationPage Title="BOUTIQUES" Icon="monkeyicon.png"
-			BackgroundImage="monkeyicon"  >		
+	<NavigationPage
+		Title="BOUTIQUES"
+		Icon="monkeyicon.png"
+		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:BoutiqueTabPage />
 		</x:Arguments>
 	</NavigationPage>
-		<NavigationPage Title="ME" Icon="monkeyicon.png"
-			BackgroundImage="monkeyicon"  >		
+	<NavigationPage
+		Title="ME"
+		Icon="monkeyicon.png"
+		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:HomeTabPage />
 		</x:Arguments>
 	</NavigationPage>
-
-
-	
-
 </TabbedPage>

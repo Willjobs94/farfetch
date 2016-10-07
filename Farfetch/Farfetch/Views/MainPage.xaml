@@ -1,29 +1,27 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Farfetch.Views.MainPage"
-		     BackgroundImage="homescreenbackground">
-	<StackLayout>		
-	  <StackLayout
-			   VerticalOptions="StartAndExpand">
-		<StackLayout 
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	x:Class="Farfetch.Views.MainPage"
+	BackgroundImage="homescreenbackground">
+	<StackLayout>
+		<StackLayout
+			VerticalOptions="StartAndExpand">
+			<StackLayout
 				Margin="20,50,20,0">
-		   	<Label 
-						
+				<Label
 					Text="THE WORLD'S BEST BOUTIQUES CURATED FOR YOU"
-					TextColor="White" 
+					TextColor="White"
 					FontSize="30"
-					FontAttributes="Bold"/>
-			
+					FontAttributes="Bold" />
+			</StackLayout>
 		</StackLayout>
-	 </StackLayout>
-		<StackLayout 
-				Orientation="Horizontal"
-				VerticalOptions="End">
-			
-			<Button 
+		<StackLayout
+			Orientation="Horizontal"
+			VerticalOptions="End">
+			<Button
 				Command="{Binding SignInCommand}"
 				Text="SIGN IN"
 				TextColor="White"
@@ -31,21 +29,16 @@
 				FontAttributes="Bold"
 				HorizontalOptions="FillAndExpand"
 				BackgroundColor="#03A9F4"
-				BorderRadius="0"/>
-			
-			<Button 
+				BorderRadius="0" />
+			<Button
 				Command="{Binding RegisterCommand}"
-					
 				Text="REGISTER"
 				TextColor="White"
 				FontSize="Medium"
 				FontAttributes="Bold"
 				BackgroundColor="#03A9F4"
 				BorderRadius="0"
-				HorizontalOptions="FillAndExpand"/>
-			
+				HorizontalOptions="FillAndExpand" />
 		</StackLayout>
-  </StackLayout>
-
-
+	</StackLayout>
 </ContentPage>

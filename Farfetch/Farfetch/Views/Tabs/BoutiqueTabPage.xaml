@@ -6,71 +6,66 @@
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.BoutiqueTabPage"
 	Title="BOUTIQUES">
-
-	<StackLayout Spacing="0">
-			<StackLayout
-				BackgroundColor="Transparent"				
-				Orientation="Horizontal"
-				Padding="10">
-				<Label
-					TextColor="Gray"
-					Text="512"
-					FontSize="Small"
-					FontAttributes="Bold" />
-				<Label
-					TextColor="Gray"
-					Text="Boutiques"
-					FontSize="Small"
-					/>
-			</StackLayout>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<DataTemplate
+				x:Key="boutiqueTemplate">
+				<ViewCell>
+					<Image
+						BackgroundColor="Black"
+						Source="{Binding ImageUri}"
+						WidthRequest="400"
+						HeightRequest="150"
+						Aspect="Fill" />
+					<Label
+						Text="{Binding Name}"
+						FontSize="Small"
+						HorizontalTextAlignment="Center"
+						FontAttributes="Bold" />
+					<Label
+						TextColor="Gray"
+						Text="{Binding ShortAddress}"
+						FontSize="14"
+						HorizontalTextAlignment="Center" />
+				</ViewCell>
+			</DataTemplate>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<StackLayout
+		Spacing="0">
+		<StackLayout
+			BackgroundColor="Transparent"
+			Orientation="Horizontal"
+			Padding="10">
+			<Label
+				TextColor="Gray"
+				Text="{Binding BoutiquesCount}"
+				FontSize="Small"
+				FontAttributes="Bold" />
+			<Label
+				TextColor="Gray"
+				Text="Boutiques"
+				FontSize="Small" />
+		</StackLayout>
 		<StackLayout>
-			<Image Source="launchscreen"
-			WidthRequest="400"
-			HeightRequest="150"
-			Aspect="Fill"/>
-			<Label 
-				Text="11 BY BORIS BIDJAN SABERI NEW YORK"
-				FontSize="Small"
-				HorizontalTextAlignment="Center"
-				FontAttributes="Bold"/>
-			<Label 
-				TextColor="Gray"
-				Text="New York, United States"
-				FontSize="14"
-				HorizontalTextAlignment="Center"/>	
-					<StackLayout>
-			<Image Source="launchscreen"
-			WidthRequest="400"
-			HeightRequest="150"
-			Aspect="Fill"/>
-			<Label 
-				Text="11 BY BORIS BIDJAN SABERI NEW YORK"
-				FontSize="Small"
-				HorizontalTextAlignment="Center"
-				FontAttributes="Bold"/>
-			<Label 
-				TextColor="Gray"
-				Text="New York, United States"
-				FontSize="14"
-				HorizontalTextAlignment="Center"/>			
-		</StackLayout>
-					<StackLayout>
-			<Image Source="launchscreen"
-			WidthRequest="400"
-			HeightRequest="150"
-			Aspect="Fill"/>
-			<Label 
-				Text="11 BY BORIS BIDJAN SABERI NEW YORK"
-				FontSize="Small"
-				HorizontalTextAlignment="Center"
-				FontAttributes="Bold"/>
-			<Label 
-				TextColor="Gray"
-				Text="New York, United States"
-				FontSize="14"
-				HorizontalTextAlignment="Center"/>			
-		</StackLayout>
-		</StackLayout>
+			<!--			<ListView
+				VerticalOptions="StartAndExpand"
+				SeparatorVisibility="None"
+				BackgroundColor="Aqua"
+				ItemsSource="{Binding Boutiques}"
+				ItemTemplate="{StaticResource boutiqueTemplate}">	
 
+			</ListView>-->
+			<ListView
+				x:Name="listView"
+				ItemsSource="{Binding Boutiques}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
 	</StackLayout>
 </ContentPage>
