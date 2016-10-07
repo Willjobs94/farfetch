@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using System.Collections.Generic;
+using Prism.Mvvm;
 
 namespace Farfetch.ViewModels
 {
@@ -11,7 +12,33 @@ namespace Farfetch.ViewModels
 			OfferCategory = "ACCESSORIES";
 			OfferImageUri = "accessories";
 
+			Catalog = new Catalog
+			{
+				Title = "NEW IN NEW YORK",
+				Items = new List<ItemCatalog>
+					{
+						new ItemCatalog
+						{
+							Name = "JACKET",
+							ImageUri = "jacket",
+							Price = "$750"
+						},
+						new ItemCatalog
+						{
+							Name = "BAG",
+							ImageUri = "bag",
+							Price = "$750"
+						},
+						new ItemCatalog
+						{
+							Name = "BLOUSE",
+							ImageUri = "blouse",
+							Price = "$750"
+						}
+					}
+			};
 		}
+
 		private string _title;
 		public string Title
 		{
@@ -39,6 +66,8 @@ namespace Farfetch.ViewModels
 			get { return _offerImageUri; }
 			set { SetProperty(ref _offerImageUri, value); }
 		}
+
+		public Catalog Catalog { get; set; }
 
 	}
 }
