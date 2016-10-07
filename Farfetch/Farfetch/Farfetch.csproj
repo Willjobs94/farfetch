@@ -43,6 +43,9 @@
     <Compile Include="Views\Tabs\HomeTabPage.xaml.cs">
       <DependentUpon>HomeTabPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tabs\BoutiqueTabPage.xaml.cs">
+      <DependentUpon>BoutiqueTabPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -56,6 +59,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Tabs\HomeTabPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Tabs\BoutiqueTabPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

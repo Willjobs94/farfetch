@@ -27,7 +27,7 @@
 		<NavigationPage Title="BOUTIQUES" Icon="monkeyicon.png"
 			BackgroundImage="monkeyicon"  >		
 		<x:Arguments>
-			<views:HomeTabPage />
+			<views:BoutiqueTabPage />
 		</x:Arguments>
 	</NavigationPage>
 		<NavigationPage Title="ME" Icon="monkeyicon.png"

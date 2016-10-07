@@ -1,100 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-		xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-		xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms" 
-		prism:ViewModelLocator.AutowireViewModel="True" 
-		x:Class="Farfetch.Views.HomeTabPage"
-		Title="Home" Icon="monkeyicon">
-	
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	x:Class="Farfetch.Views.HomeTabPage"
+	Title="Home"
+	Icon="monkeyicon">
 	<ContentPage.Icon>
-		<OnPlatform x:TypeArguments="FileImageSource"
-			iOS="monkeyicon"/>
+		<OnPlatform
+			x:TypeArguments="FileImageSource"
+			iOS="monkeyicon" />
 	</ContentPage.Icon>
-	<StackLayout 
-			VerticalOptions="StartAndExpand" 
-			Spacing="0">
-		<SearchBar 
+	<StackLayout
+		VerticalOptions="StartAndExpand"
+		Spacing="0">
+		<SearchBar
 			Placeholder="Search Here">
 		</SearchBar>
-
 		<StackLayout>
 			<StackLayout
-					BackgroundColor="#F5F5F5"			
-				   VerticalOptions="StartAndExpand"
-					Padding="15">
-				<Label 
+				BackgroundColor="#F5F5F5"
+				VerticalOptions="StartAndExpand"
+				Padding="15">
+				<Label
 					TextColor="#F78D87"
-					Text="SALE | UP TO 50% OFF" 
+					Text="SALE | UP TO 50% OFF"
 					HorizontalTextAlignment="Center"
 					FontSize="Medium"
-					FontAttributes="Bold"
-					/>
+					FontAttributes="Bold" />
 			</StackLayout>
 		</StackLayout>
-					
 		<RelativeLayout>
-
-			<Image 				
-				Source="accessories" 
-				WidthRequest="400" 
-				HeightRequest="300" 
-				Aspect="AspectFill" 
-				Opacity="0.9"/>
-				
-			<StackLayout 
-
-						WidthRequest="400"
-						HeightRequest="300">
-			    <StackLayout
-							VerticalOptions="CenterAndExpand"
-							HorizontalOptions="Center">
-						<Frame
-								BackgroundColor="#992F2F2F"
-								Padding="5, 13, 5, 13">
-
-							<Label						
-								Text="ACCESSORIES"
-								TextColor="White"
-								FontAttributes="Bold"
-								FontSize="19"/>
-						</Frame>
-				</StackLayout>		   
+			<Image
+				Source="accessories"
+				WidthRequest="400"
+				HeightRequest="300"
+				Aspect="AspectFill"
+				Opacity="0.9" />
+			<StackLayout
+				WidthRequest="400"
+				HeightRequest="300">
+				<StackLayout
+					VerticalOptions="CenterAndExpand"
+					HorizontalOptions="Center">
+					<Frame
+						BackgroundColor="#992F2F2F"
+						Padding="5, 13, 5, 13">
+						<Label
+							Text="ACCESSORIES"
+							TextColor="White"
+							FontAttributes="Bold"
+							FontSize="19" />
+					</Frame>
+				</StackLayout>
 			</StackLayout>
-  </RelativeLayout>
-
-  <StackLayout VerticalOptions="CenterAndExpand">
-			<Label 				
+		</RelativeLayout>
+		<StackLayout
+			VerticalOptions="CenterAndExpand">
+			<Label
 				Text="NEW IN TODAY"
 				Font="18"
 				FontAttributes="Bold"
-				HorizontalOptions="Center"/>
+				HorizontalOptions="Center" />
 		</StackLayout>
-		<StackLayout 
-				VerticalOptions="EndAndExpand">
-
-			<StackLayout 
-					Spacing="1"
-					Orientation="Horizontal">
-				<Image 					
-					Source="homescreenbackground.png"
-	
-					WidthRequest="125"
-					HeightRequest="150"
-					Aspect="AspectFill"/>
-				<Image 
-
+		<StackLayout
+			VerticalOptions="EndAndExpand">
+			<StackLayout
+				Spacing="1"
+				Orientation="Horizontal">
+				<Image
 					Source="homescreenbackground.png"
 					WidthRequest="125"
 					HeightRequest="150"
-					Aspect="AspectFill"/>			
-				<Image 
-	
+					Aspect="AspectFill" />
+				<Image
 					Source="homescreenbackground.png"
 					WidthRequest="125"
 					HeightRequest="150"
-					Aspect="AspectFill"/>
-				
+					Aspect="AspectFill" />
+				<Image
+					Source="homescreenbackground.png"
+					WidthRequest="125"
+					HeightRequest="150"
+					Aspect="AspectFill" />
 			</StackLayout>
 		</StackLayout>
 	</StackLayout>
