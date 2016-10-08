@@ -9,5 +9,6 @@ namespace Farfetch
 		public ItemCatalog RightItemCatalog { get; set; }
 		public ItemCatalog CenterItemCatalog { get; set; }
 		public ItemCatalog LeftItemCatalog { get; set; }
+		public bool IsLastItem { get; set; }
 	}
 }

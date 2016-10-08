@@ -19,7 +19,7 @@
 		Icon="monkeyicon.png"
 		BackgroundImage="monkeyicon">
 		<x:Arguments>
-			<views:HomeTabPage />
+			<views:ShopTabPage />
 		</x:Arguments>
 	</NavigationPage>
 	<NavigationPage

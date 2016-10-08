@@ -57,6 +57,17 @@
     <Compile Include="CustomViews\ItemCatalogView.xaml.cs">
       <DependentUpon>ItemCatalogView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tabs\ShopTabPage.xaml.cs">
+      <DependentUpon>ShopTabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ShopTabPageViewModel.cs" />
+    <Compile Include="CustomViews\MiniCatalogTemplateSelector.cs" />
+    <Compile Include="CustomViews\DefaultMiniCatalogViewCell.xaml.cs">
+      <DependentUpon>DefaultMiniCatalogViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\LastMiniCatalogViewCell.xaml.cs">
+      <DependentUpon>LastMiniCatalogViewCell.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -79,6 +90,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomViews\ItemCatalogView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Tabs\ShopTabPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\DefaultMiniCatalogViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\LastMiniCatalogViewCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

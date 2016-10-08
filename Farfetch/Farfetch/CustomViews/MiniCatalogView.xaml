@@ -7,7 +7,7 @@
 	<StackLayout
 		BackgroundColor="#E5E5E5"
 		Padding="1"
-		Spacing="2">
+		Spacing="1">
 		<StackLayout
 			Padding="6"
 			BackgroundColor="White">
@@ -18,8 +18,7 @@
 				HorizontalTextAlignment="Center" />
 		</StackLayout>
 		<StackLayout
-			Spacing="2"
-			Padding="0,0,0,1"
+			Spacing="1"
 			Orientation="Horizontal">
 			<StackLayout
 				BackgroundColor="White">
