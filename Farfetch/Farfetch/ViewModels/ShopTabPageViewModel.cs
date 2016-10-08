@@ -10,6 +10,7 @@ namespace Farfetch.ViewModels
 	{
 		public ShopTabPageViewModel()
 		{
+			Title = "SHOP";
 			Catalogs = new List<Catalog>
 			{
 				new Catalog
@@ -64,6 +65,7 @@ namespace Farfetch.ViewModels
 
 		}
 
+		public string Title { get; set; }
 		public IEnumerable<Catalog> Catalogs { get; set; }
 	}
 }
