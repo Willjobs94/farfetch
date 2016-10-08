@@ -143,6 +143,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\homescreenbackground.png" />
+    <AndroidResource Include="Resources\drawable\bag.png" />
+    <AndroidResource Include="Resources\drawable\blouse.png" />
+    <AndroidResource Include="Resources\drawable\jacket.png" />
+    <AndroidResource Include="Resources\drawable\monkeyicon.png" />
+    <AndroidResource Include="Resources\drawable\accessories.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\tabs.xml" />
