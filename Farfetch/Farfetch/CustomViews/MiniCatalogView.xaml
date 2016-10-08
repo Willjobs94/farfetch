@@ -5,9 +5,9 @@
 	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
 	x:Class="Farfetch.MiniCatalogView">
 	<StackLayout
-		BackgroundColor="#F5F5F5"
+		BackgroundColor="#E5E5E5"
 		Padding="1"
-		Spacing="1">
+		Spacing="2">
 		<StackLayout
 			Padding="6"
 			BackgroundColor="White">
@@ -18,22 +18,23 @@
 				HorizontalTextAlignment="Center" />
 		</StackLayout>
 		<StackLayout
-			Spacing="1"
+			Spacing="2"
+			Padding="0,0,0,1"
 			Orientation="Horizontal">
 			<StackLayout
 				BackgroundColor="White">
-				<local:ItemCatalogView 
+				<local:ItemCatalogView
 					BindingContext="{Binding RightItemCatalog}" />
 			</StackLayout>
 			<StackLayout
 				BackgroundColor="White">
-				<local:ItemCatalogView 
+				<local:ItemCatalogView
 					BindingContext="{Binding CenterItemCatalog}" />
 			</StackLayout>
 			<StackLayout
 				BackgroundColor="White">
-				<local:ItemCatalogView 
-					BindingContext="{Binding LeftItemCatalog}"/>
+				<local:ItemCatalogView
+					BindingContext="{Binding LeftItemCatalog}" />
 			</StackLayout>
 		</StackLayout>
 	</StackLayout>
