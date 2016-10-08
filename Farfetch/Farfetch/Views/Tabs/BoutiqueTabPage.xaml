@@ -5,28 +5,30 @@
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.BoutiqueTabPage"
-	Title="BOUTIQUES">
+	Title="{Binding Title}">
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<DataTemplate
 				x:Key="boutiqueTemplate">
 				<ViewCell>
-					<Image
-						BackgroundColor="Black"
-						Source="{Binding ImageUri}"
-						WidthRequest="400"
-						HeightRequest="150"
-						Aspect="Fill" />
-					<Label
-						Text="{Binding Name}"
-						FontSize="Small"
-						HorizontalTextAlignment="Center"
-						FontAttributes="Bold" />
-					<Label
-						TextColor="Gray"
-						Text="{Binding ShortAddress}"
-						FontSize="14"
-						HorizontalTextAlignment="Center" />
+					<StackLayout>
+						<Image
+							BackgroundColor="Black"
+							Source="{Binding ImageUri}"
+							WidthRequest="400"
+							HeightRequest="150"
+							Aspect="Fill" />
+						<Label
+							Text="{Binding Name}"
+							FontSize="Small"
+							HorizontalTextAlignment="Center"
+							FontAttributes="Bold" />
+						<Label
+							TextColor="Gray"
+							Text="{Binding ShortAddress}"
+							FontSize="14"
+							HorizontalTextAlignment="Center" />
+					</StackLayout>
 				</ViewCell>
 			</DataTemplate>
 		</ResourceDictionary>
@@ -48,23 +50,12 @@
 				FontSize="Small" />
 		</StackLayout>
 		<StackLayout>
-			<!--			<ListView
-				VerticalOptions="StartAndExpand"
-				SeparatorVisibility="None"
-				BackgroundColor="Aqua"
-				ItemsSource="{Binding Boutiques}"
-				ItemTemplate="{StaticResource boutiqueTemplate}">	
-
-			</ListView>-->
 			<ListView
 				x:Name="listView"
-				ItemsSource="{Binding Boutiques}">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<ViewCell>
-						</ViewCell>
-					</DataTemplate>
-				</ListView.ItemTemplate>
+				ItemsSource="{Binding Boutiques}"
+				SeparatorVisibility="None"
+				HasUnevenRows="true"
+				ItemTemplate="{StaticResource boutiqueTemplate}">
 			</ListView>
 		</StackLayout>
 	</StackLayout>

@@ -14,7 +14,7 @@ namespace Farfetch.ViewModels
 			_navigationService = navigationService;
 			SignInCommand = new DelegateCommand(NavigateToTabbedPage);
 			RegisterCommand = new DelegateCommand(NavigateToTabbedPage);
-			
+
 		}
 
 		public DelegateCommand SignInCommand { get; set; }

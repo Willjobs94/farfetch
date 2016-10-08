@@ -49,6 +49,8 @@
     <Compile Include="ViewModels\HomeTabPageViewModel.cs" />
     <Compile Include="Models\ItemCatalog.cs" />
     <Compile Include="Models\Catalog.cs" />
+    <Compile Include="ViewModels\BoutiqueTabPageViewModel.cs" />
+    <Compile Include="Models\Boutique.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
