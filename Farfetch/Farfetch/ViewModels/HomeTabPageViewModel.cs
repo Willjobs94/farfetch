@@ -14,29 +14,28 @@ namespace Farfetch.ViewModels
 
 			Catalog = new Catalog
 			{
-				Title = "NEW IN NEW YORK",
-				Items = new List<ItemCatalog>
-					{
-						new ItemCatalog
-						{
-							Name = "JACKET",
-							ImageUri = "jacket",
-							Price = "$750"
-						},
-						new ItemCatalog
-						{
-							Name = "BAG",
-							ImageUri = "bag",
-							Price = "$750"
-						},
-						new ItemCatalog
-						{
-							Name = "BLOUSE",
-							ImageUri = "blouse",
-							Price = "$750"
-						}
-					}
+				Title = "NEW IN TODAY",
+				RightItemCatalog = new ItemCatalog
+				{
+					Name = "JACKET",
+					ImageUri = "jacket",
+					Price = "$750"
+				},
+				CenterItemCatalog = new ItemCatalog
+				{
+					Name = "BAG",
+					ImageUri = "bag",
+					Price = "$750"
+				},
+				LeftItemCatalog = new ItemCatalog
+				{
+					Name = "BLOUSE",
+					ImageUri = "blouse",
+					Price = "$750"
+				}
+
 			};
+
 		}
 
 		private string _title;

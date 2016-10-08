@@ -51,6 +51,12 @@
     <Compile Include="Models\Catalog.cs" />
     <Compile Include="ViewModels\BoutiqueTabPageViewModel.cs" />
     <Compile Include="Models\Boutique.cs" />
+    <Compile Include="CustomViews\MiniCatalogView.xaml.cs">
+      <DependentUpon>MiniCatalogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomViews\ItemCatalogView.xaml.cs">
+      <DependentUpon>ItemCatalogView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -67,6 +73,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Tabs\BoutiqueTabPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\MiniCatalogView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\ItemCatalogView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -119,6 +131,7 @@
   <ItemGroup>
     <Folder Include="Views\Tabs\" />
     <Folder Include="Models\" />
+    <Folder Include="CustomViews\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

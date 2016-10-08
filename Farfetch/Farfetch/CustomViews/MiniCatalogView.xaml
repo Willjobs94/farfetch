@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
+	x:Class="Farfetch.MiniCatalogView">
+	<StackLayout
+		BackgroundColor="#F5F5F5"
+		Padding="1"
+		Spacing="1">
+		<StackLayout
+			Padding="6"
+			BackgroundColor="White">
+			<Label
+				Text="{Binding Title}"
+				Font="Small"
+				FontAttributes="Bold"
+				HorizontalTextAlignment="Center" />
+		</StackLayout>
+		<StackLayout
+			Spacing="1"
+			Orientation="Horizontal">
+			<StackLayout
+				BackgroundColor="White">
+				<local:ItemCatalogView 
+					BindingContext="{Binding RightItemCatalog}" />
+			</StackLayout>
+			<StackLayout
+				BackgroundColor="White">
+				<local:ItemCatalogView 
+					BindingContext="{Binding CenterItemCatalog}" />
+			</StackLayout>
+			<StackLayout
+				BackgroundColor="White">
+				<local:ItemCatalogView 
+					BindingContext="{Binding LeftItemCatalog}"/>
+			</StackLayout>
+		</StackLayout>
+	</StackLayout>
+</ContentView>

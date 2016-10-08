@@ -3,6 +3,7 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch" 
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.HomeTabPage"
 	Title="{Binding Title}"
@@ -58,84 +59,7 @@
 					</StackLayout>
 				</StackLayout>
 			</RelativeLayout>
-			<StackLayout
-				BackgroundColor="#F5F5F5"
-				Padding="1"
-				Spacing="1">
-				<StackLayout
-					Padding="6"
-					BackgroundColor="White">
-					<Label
-						Text="{Binding Catalog.Title}"
-						Font="Small"
-						FontAttributes="Bold"
-						HorizontalTextAlignment="Center" />
-				</StackLayout>
-				<StackLayout
-					Spacing="1"
-					Orientation="Horizontal">
-					<StackLayout
-						BackgroundColor="White">
-						<Image
-							Source="{Binding Catalog.Items[0].ImageUri}"
-							WidthRequest="125"
-							HeightRequest="150"
-							Aspect="AspectFit" />
-						<Label
-							Text="{Binding Catalog.Items[0].Name}"
-							FontSize="Small"
-							HorizontalTextAlignment="Center"
-							FontAttributes="Bold" />
-						<Label
-							Text="{Binding Catalog.Items[0].Price}"
-							TextColor="#5C5C5C"
-							FontSize="Micro"
-							FontAttributes="Bold"
-							Margin="0, 8, 0, 8"
-							HorizontalTextAlignment="Center" />
-					</StackLayout>
-					<StackLayout
-						BackgroundColor="White">
-						<Image
-							Source="{Binding Catalog.Items[1].ImageUri}"
-							WidthRequest="125"
-							HeightRequest="150"
-							Aspect="AspectFit" />
-						<Label
-							Text="{Binding Catalog.Items[1].Name}"
-							FontSize="Small"
-							HorizontalTextAlignment="Center"
-							FontAttributes="Bold" />
-						<Label
-							Text="{Binding Catalog.Items[1].Price}"
-							TextColor="#5C5C5C"
-							FontSize="Micro"
-							FontAttributes="Bold"
-							Margin="0, 8, 0, 8"
-							HorizontalTextAlignment="Center" />
-					</StackLayout>
-					<StackLayout
-						BackgroundColor="White">
-						<Image
-							Source="{Binding Catalog.Items[2].ImageUri}"
-							WidthRequest="125"
-							HeightRequest="150"
-							Aspect="AspectFit" />
-						<Label
-							Text="{Binding Catalog.Items[2].Name}"
-							FontSize="Small"
-							HorizontalTextAlignment="Center"
-							FontAttributes="Bold" />
-						<Label
-							Text="{Binding Catalog.Items[2].Price}"
-							TextColor="#5C5C5C"
-							FontSize="Micro"
-							FontAttributes="Bold"
-							Margin="0, 8, 0, 8"
-							HorizontalTextAlignment="Center" />
-					</StackLayout>
-				</StackLayout>
-			</StackLayout>
+			<local:MiniCatalogView BindingContext="{Binding Catalog}"/>
 		</StackLayout>
 	</ScrollView>
 </ContentPage>

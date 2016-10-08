@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Farfetch.ItemCatalogView">
+	<StackLayout
+		BackgroundColor="White">
+		<Image
+			Source="{Binding ImageUri}"
+			WidthRequest="125"
+			HeightRequest="150"
+			Aspect="AspectFit" />
+		<Label
+			Text="{Binding Name}"
+			FontSize="Small"
+			HorizontalTextAlignment="Center"
+			FontAttributes="Bold" />
+		<Label
+			Text="{Binding Price}"
+			TextColor="#5C5C5C"
+			FontSize="Micro"
+			FontAttributes="Bold"
+			Margin="0, 8, 0, 8"
+			HorizontalTextAlignment="Center"/>
+	</StackLayout>
+</ContentView>
