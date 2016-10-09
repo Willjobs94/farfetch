@@ -6,26 +6,5 @@
 	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.ShopTabPage"
-		Title="{Binding Title}">
-	<ContentPage.Resources>
-		<ResourceDictionary>
-			<local:MiniCatalogTemplateSelector
-				x:Key="miniCatalogTemplateSelector" />
-		</ResourceDictionary>
-	</ContentPage.Resources>
-	<ScrollView>
-		<StackLayout
-			VerticalOptions="StartAndExpand"
-			Spacing="0">
-			<SearchBar
-				Placeholder="Search here">
-			</SearchBar>
-			<ListView
-				HasUnevenRows="true"
-				SeparatorVisibility="None"
-				ItemsSource="{Binding Catalogs}"
-				ItemTemplate="{StaticResource miniCatalogTemplateSelector}">
-			</ListView>
-		</StackLayout>
-	</ScrollView>
+	Title="{Binding Title}">
 </ContentPage>
