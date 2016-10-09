@@ -5,18 +5,18 @@
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	xmlns:views="clr-namespace:Farfetch.Views;assembly=Farfetch"
 	prism:ViewModelLocator.AutowireViewModel="True"
-	x:Class="Farfetch.Views.MainTabbedPage">
+	x:Class="Farfetch.Views.MainTabbedPage"
+	>
 	<NavigationPage
 		Title="Home"
-		Icon="monkeyicon.png"
-		BackgroundImage="monkeyicon">
+		Icon="farfetchicon">
 		<x:Arguments>
 			<views:HomeTabPage />
 		</x:Arguments>
 	</NavigationPage>
 	<NavigationPage
 		Title="SHOP"
-		Icon="monkeyicon.png"
+		Icon="hangericon"
 		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:ShopTabPage />
@@ -24,7 +24,7 @@
 	</NavigationPage>
 	<NavigationPage
 		Title="DESIGNERS"
-		Icon="monkeyicon.png"
+		Icon="tagicon"
 		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:HomeTabPage />
@@ -32,7 +32,7 @@
 	</NavigationPage>
 	<NavigationPage
 		Title="BOUTIQUES"
-		Icon="monkeyicon.png"
+		Icon="flagicon"
 		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:BoutiqueTabPage />
@@ -40,7 +40,7 @@
 	</NavigationPage>
 	<NavigationPage
 		Title="ME"
-		Icon="monkeyicon.png"
+		Icon="usericon"
 		BackgroundImage="monkeyicon">
 		<x:Arguments>
 			<views:HomeTabPage />
