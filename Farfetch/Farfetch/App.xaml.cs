@@ -18,11 +18,14 @@ namespace Farfetch
 		protected override void RegisterTypes()
 		{
 			Container.RegisterTypeForNavigation<MainPage>();
+			Container.RegisterTypeForNavigation<BoutiqueDetailPage>();
+
+			Container.RegisterTypeForNavigation<MainTabbedPage>();
 			Container.RegisterTypeForNavigation<HomeTabPage>();
 			Container.RegisterTypeForNavigation<ShopTabPage>();
 			Container.RegisterTypeForNavigation<BoutiqueTabPage>();
+
 			Container.RegisterTypeForNavigation<NavigationPage>();
-			Container.RegisterTypeForNavigation<MainTabbedPage>();
 		}
 
 

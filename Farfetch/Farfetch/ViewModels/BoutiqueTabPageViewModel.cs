@@ -3,13 +3,16 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Prism.Navigation;
 
 namespace Farfetch.ViewModels
 {
 	public class BoutiqueTabPageViewModel : BindableBase
 	{
-		public BoutiqueTabPageViewModel()
+		public BoutiqueTabPageViewModel(INavigationService navigationService)
 		{
+			_navigationService = navigationService;
+
 			Title = "BOUTIQUES";
 
 			Boutiques = new List<Boutique>
@@ -35,6 +38,7 @@ namespace Farfetch.ViewModels
 			};
 
 			BoutiquesCount = Boutiques.Count().ToString();
+			ItemTappedCommand = new DelegateCommand(OnItemTapped);
 		}
 
 		private string _boutiquesCount;
@@ -47,6 +51,15 @@ namespace Farfetch.ViewModels
 		public string Title { get; set; }
 
 		public IEnumerable<Boutique> Boutiques { get; set; }
+
+		public DelegateCommand ItemTappedCommand { get; set; }
+
+		void OnItemTapped()
+		{
+			_navigationService.NavigateAsync("BoutiqueDetailPage");
+		}
+
+		private INavigationService _navigationService;
 
 	}
 }

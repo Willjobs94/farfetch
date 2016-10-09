@@ -72,6 +72,13 @@
       <DependentUpon>LastMiniCatalogViewCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomCells\MiniCatalogTemplateSelector.cs" />
+    <Compile Include="CustomViews\BoutiqueView.xaml.cs">
+      <DependentUpon>BoutiqueView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BoutiqueDetailPage.xaml.cs">
+      <DependentUpon>BoutiqueDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\BoutiqueDetailPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -106,6 +113,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomCells\LastMiniCatalogViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\BoutiqueView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BoutiqueDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
