@@ -3,6 +3,7 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.BoutiqueTabPage"
 	Title="{Binding Title}">
@@ -11,24 +12,7 @@
 			<DataTemplate
 				x:Key="boutiqueTemplate">
 				<ViewCell>
-					<StackLayout>
-						<Image
-							BackgroundColor="Black"
-							Source="{Binding ImageUri}"
-							WidthRequest="400"
-							HeightRequest="150"
-							Aspect="Fill" />
-						<Label
-							Text="{Binding Name}"
-							FontSize="Small"
-							HorizontalTextAlignment="Center"
-							FontAttributes="Bold" />
-						<Label
-							TextColor="Gray"
-							Text="{Binding ShortAddress}"
-							FontSize="14"
-							HorizontalTextAlignment="Center" />
-					</StackLayout>
+					<local:BoutiqueView />
 				</ViewCell>
 			</DataTemplate>
 		</ResourceDictionary>
