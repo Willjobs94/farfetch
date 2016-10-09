@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="Farfetch.OfferView">
+	<StackLayout
+			Spacing="0">
+		<StackLayout>
+			<StackLayout
+				BackgroundColor="#F5F5F5"
+				VerticalOptions="StartAndExpand"
+				Padding="10">
+				<Label
+					TextColor="#F04B5A"
+					Text="{Binding Title}"
+					HorizontalTextAlignment="Center"
+					FontSize="Medium"
+					FontAttributes="Bold" />
+			</StackLayout>
+		</StackLayout>
+		<RelativeLayout>
+			<Image
+				Source="{Binding ImageUri}"
+				WidthRequest="400"
+				HeightRequest="300"
+				Aspect="AspectFill"
+				Opacity="0.9" />
+			<StackLayout
+				WidthRequest="400"
+				HeightRequest="300">
+				<StackLayout
+					VerticalOptions="CenterAndExpand"
+					HorizontalOptions="Center">
+					<Frame
+						BackgroundColor="#992F2F2F"
+						Padding="5, 13, 5, 13">
+						<Label
+							Text="{Binding Category}"
+							TextColor="White"
+							FontAttributes="Bold"
+							FontSize="19" />
+					</Frame>
+				</StackLayout>
+			</StackLayout>
+		</RelativeLayout>
+	</StackLayout>
+</ContentView>

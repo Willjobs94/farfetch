@@ -68,6 +68,10 @@
     <Compile Include="CustomViews\LastMiniCatalogViewCell.xaml.cs">
       <DependentUpon>LastMiniCatalogViewCell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Offer.cs" />
+    <Compile Include="CustomViews\OfferView.xaml.cs">
+      <DependentUpon>OfferView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -99,6 +103,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomViews\LastMiniCatalogViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\OfferView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

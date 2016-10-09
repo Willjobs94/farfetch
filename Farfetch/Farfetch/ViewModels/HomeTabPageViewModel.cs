@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Prism.Mvvm;
 
 namespace Farfetch.ViewModels
@@ -8,65 +9,96 @@ namespace Farfetch.ViewModels
 		public HomeTabPageViewModel()
 		{
 			Title = "Home";
-			OfferTitle = "SALE | UP TO 50% OFF";
-			OfferCategory = "ACCESSORIES";
-			OfferImageUri = "accessories";
-
-			Catalog = new Catalog
+			Offer = new Offer
 			{
-				Title = "NEW IN TODAY",
-				RightItemCatalog = new ItemCatalog
+				Title = "SALE | UP TO 50% OFF",
+				Category = "ACCESSORIES",
+				ImageUri = "accessories"
+			};
+
+			Catalogs = new List<Catalog>
+			{
+					new Catalog
 				{
-					Name = "JACKET",
-					ImageUri = "jacket",
-					Price = "$750"
+					Title = "NEW IN TODAY",
+					RightItemCatalog = new ItemCatalog
+					{
+						Name = "JACKET",
+						ImageUri = "jacket",
+						Price = "$750"
+					},
+					CenterItemCatalog = new ItemCatalog
+					{
+						Name = "BAG",
+						ImageUri = "bag",
+						Price = "$460"
+					},
+					LeftItemCatalog = new ItemCatalog
+					{
+						Name = "BLOUSE",
+						ImageUri = "blouse",
+						Price = "$950"
+					}
 				},
-				CenterItemCatalog = new ItemCatalog
+				new Catalog
 				{
-					Name = "BAG",
-					ImageUri = "bag",
-					Price = "$750"
+					Title = "SUMMER 2016: THE HOT LIST",
+					RightItemCatalog = new ItemCatalog
+					{
+						Name = "COURRÈGES",
+						ImageUri = "courreges",
+						Price = "$705"
+					},
+					CenterItemCatalog = new ItemCatalog
+					{
+						Name = "CESARE PACIOTTI",
+						ImageUri = "paciotti",
+						Price = "$562"
+
+					},
+					LeftItemCatalog = new ItemCatalog
+					{
+						Name = "HOUSE OF HOLLAND",
+						ImageUri = "houseofholland",
+						Price = "$388"
+					}
 				},
-				LeftItemCatalog = new ItemCatalog
+				new Catalog
 				{
-					Name = "BLOUSE",
-					ImageUri = "blouse",
-					Price = "$750"
+					Title = "MODERN CRAFT",
+					RightItemCatalog = new ItemCatalog
+					{
+						Name = "PINK BLOUSE",
+						ImageUri = "pinkblouse",
+						Price = "$820"
+					},
+					CenterItemCatalog = new ItemCatalog
+					{
+						Name = "GOLD EARRINGS",
+						ImageUri = "earrings",
+						Price = "$600"
+
+					},
+					LeftItemCatalog = new ItemCatalog
+					{
+						Name = "BUSINESS SKIRT",
+						ImageUri = "skirt",
+						Price = "$500",
+					},
+
 				}
+			
 
 			};
 
+			Catalogs.Last().IsLastItem = true;
+
 		}
 
-		private string _title;
-		public string Title
-		{
-			get { return _title; }
-			set { SetProperty(ref _title, value); }
-		}
+		public string Title { get; set; }
+		public Offer Offer { get; set; }
 
-		private string _offerTitle;
-		public string OfferTitle
-		{
-			get { return _offerTitle; }
-			set { SetProperty(ref _offerTitle, value); }
-		}
-
-		private string _offerCategory;
-		public string OfferCategory
-		{
-			get { return _offerCategory; }
-			set { SetProperty(ref _offerCategory, value); }
-		}
-
-		private string _offerImageUri;
-		public string OfferImageUri
-		{
-			get { return _offerImageUri; }
-			set { SetProperty(ref _offerImageUri, value); }
-		}
-
-		public Catalog Catalog { get; set; }
+		public IEnumerable<Catalog> Catalogs { get; set; }
 
 	}
 }

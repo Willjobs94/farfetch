@@ -3,7 +3,7 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch" 
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.HomeTabPage"
 	Title="{Binding Title}"
@@ -14,52 +14,28 @@
 			iOS="monkeyicon"
 			Android="monkeyicon.png" />
 	</ContentPage.Icon>
-	<ScrollView>
-		<StackLayout
-			VerticalOptions="StartAndExpand"
-			Spacing="0">
-			<SearchBar
-				Placeholder="Search here">
-			</SearchBar>
-			<StackLayout>
-				<StackLayout
-					BackgroundColor="#F5F5F5"
-					VerticalOptions="StartAndExpand"
-					Padding="15">
-					<Label
-						TextColor="#F78D87"
-						Text="{Binding OfferTitle}"
-						HorizontalTextAlignment="Center"
-						FontSize="Medium"
-						FontAttributes="Bold" />
-				</StackLayout>
-			</StackLayout>
-			<RelativeLayout>
-				<Image
-					Source="{Binding OfferImageUri}"
-					WidthRequest="400"
-					HeightRequest="300"
-					Aspect="AspectFill"
-					Opacity="0.9" />
-				<StackLayout
-					WidthRequest="400"
-					HeightRequest="300">
-					<StackLayout
-						VerticalOptions="CenterAndExpand"
-						HorizontalOptions="Center">
-						<Frame
-							BackgroundColor="#992F2F2F"
-							Padding="5, 13, 5, 13">
-							<Label
-								Text="{Binding OfferCategory}"
-								TextColor="White"
-								FontAttributes="Bold"
-								FontSize="19" />
-						</Frame>
-					</StackLayout>
-				</StackLayout>
-			</RelativeLayout>
-			<local:MiniCatalogView BindingContext="{Binding Catalog}"/>
-		</StackLayout>
-	</ScrollView>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:MiniCatalogTemplateSelector
+				x:Key="miniCatalogTemplateSelector" />
+			<DataTemplate x:Key="offerView">
+				<local:OfferView/>
+			</DataTemplate>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<StackLayout
+		VerticalOptions="StartAndExpand"
+		Spacing="0">
+		<SearchBar
+			Placeholder="Search here">
+		</SearchBar>
+		<ListView
+			HasUnevenRows="true"
+			SeparatorVisibility="None"
+				Header="{Binding Offer}"
+				HeaderTemplate="{StaticResource offerView}"
+			ItemsSource="{Binding Catalogs}"
+			ItemTemplate="{StaticResource miniCatalogTemplateSelector}">
+		</ListView>
+	</StackLayout>
 </ContentPage>
