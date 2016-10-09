@@ -61,17 +61,17 @@
       <DependentUpon>ShopTabPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ShopTabPageViewModel.cs" />
-    <Compile Include="CustomViews\MiniCatalogTemplateSelector.cs" />
-    <Compile Include="CustomViews\DefaultMiniCatalogViewCell.xaml.cs">
-      <DependentUpon>DefaultMiniCatalogViewCell.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomViews\LastMiniCatalogViewCell.xaml.cs">
-      <DependentUpon>LastMiniCatalogViewCell.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Offer.cs" />
     <Compile Include="CustomViews\OfferView.xaml.cs">
       <DependentUpon>OfferView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomCells\DefaultMiniCatalogViewCell.xaml.cs">
+      <DependentUpon>DefaultMiniCatalogViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCells\LastMiniCatalogViewCell.xaml.cs">
+      <DependentUpon>LastMiniCatalogViewCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCells\MiniCatalogTemplateSelector.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -99,13 +99,13 @@
     <EmbeddedResource Include="Views\Tabs\ShopTabPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomViews\DefaultMiniCatalogViewCell.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomViews\LastMiniCatalogViewCell.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomViews\OfferView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCells\DefaultMiniCatalogViewCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCells\LastMiniCatalogViewCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -159,6 +159,7 @@
     <Folder Include="Views\Tabs\" />
     <Folder Include="Models\" />
     <Folder Include="CustomViews\" />
+    <Folder Include="CustomCells\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.1.114\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
