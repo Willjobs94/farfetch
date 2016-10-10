@@ -2,7 +2,14 @@
 <ContentView
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
 	x:Class="Farfetch.ItemCatalogView">
+	<ContentView.Resources>
+		<ResourceDictionary>
+			<local:DecimalValueConverter
+				x:Key="decimalValueConverter" />
+		</ResourceDictionary>
+	</ContentView.Resources>
 	<StackLayout
 		BackgroundColor="White">
 		<Image
@@ -16,11 +23,11 @@
 			HorizontalTextAlignment="Center"
 			FontAttributes="Bold" />
 		<Label
-			Text="{Binding Price}"
+			Text="{Binding Price, Converter={StaticResource decimalValueConverter}}"
 			TextColor="#5C5C5C"
 			FontSize="Micro"
 			FontAttributes="Bold"
 			Margin="0, 8, 0, 8"
-			HorizontalTextAlignment="Center"/>
+			HorizontalTextAlignment="Center" />
 	</StackLayout>
 </ContentView>

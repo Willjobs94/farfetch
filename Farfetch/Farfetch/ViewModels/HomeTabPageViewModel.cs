@@ -25,19 +25,19 @@ namespace Farfetch.ViewModels
 					{
 						Name = "JACKET",
 						ImageUri = "jacket",
-						Price = "$750"
+						Price = 750
 					},
 					CenterItemCatalog = new ItemCatalog
 					{
 						Name = "BAG",
 						ImageUri = "bag",
-						Price = "$460"
+						Price = 460
 					},
 					LeftItemCatalog = new ItemCatalog
 					{
 						Name = "BLOUSE",
 						ImageUri = "blouse",
-						Price = "$950"
+						Price = 950
 					}
 				},
 				new Catalog
@@ -47,20 +47,20 @@ namespace Farfetch.ViewModels
 					{
 						Name = "COURRÈGES",
 						ImageUri = "courreges",
-						Price = "$705"
+						Price = 705
 					},
 					CenterItemCatalog = new ItemCatalog
 					{
 						Name = "CESARE PACIOTTI",
 						ImageUri = "paciotti",
-						Price = "$562"
+						Price = 562
 
 					},
 					LeftItemCatalog = new ItemCatalog
 					{
 						Name = "HOUSE OF HOLLAND",
 						ImageUri = "houseofholland",
-						Price = "$388"
+						Price = 388
 					}
 				},
 				new Catalog
@@ -70,20 +70,20 @@ namespace Farfetch.ViewModels
 					{
 						Name = "PINK BLOUSE",
 						ImageUri = "pinkblouse",
-						Price = "$820"
+						Price = 820
 					},
 					CenterItemCatalog = new ItemCatalog
 					{
 						Name = "GOLD EARRINGS",
 						ImageUri = "earrings",
-						Price = "$600"
+						Price = 600
 
 					},
 					LeftItemCatalog = new ItemCatalog
 					{
 						Name = "BUSINESS SKIRT",
 						ImageUri = "skirt",
-						Price = "$500",
+						Price = 500
 					},
 
 				}
