@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
+	x:Class="Farfetch.ItemView">
+	<ContentView.Resources>
+		<ResourceDictionary>
+			<local:DecimalValueConverter
+				x:Key="decimalValueConverter" />
+		</ResourceDictionary>
+	</ContentView.Resources>
+	<StackLayout
+		Padding="12,12,12,10"
+		BackgroundColor="White"
+		VerticalOptions="Start"
+		HorizontalOptions="Center"
+		Spacing="3">
+		<Button
+			Image="staricon"
+			WidthRequest="20"
+			HeightRequest="20"
+			HorizontalOptions="End" />
+		<Image
+			Margin="3"
+			Source="{Binding ImageUri}"
+			HeightRequest="170"
+			WidthRequest="157" />
+		<StackLayout
+			Margin="0,50,0,0">
+			<Label
+				Text="{Binding Name}"
+				FontSize="Small"
+				FontAttributes="Bold" />
+			<Label
+				TextColor="#878787"
+				Text="{Binding Description}"
+				FontSize="12" />
+			<Label
+				Text="{Binding Price, Converter={StaticResource decimalValueConverter}}"
+				TextColor="Black"
+				FontSize="Micro"
+				Margin="0,40,0,0" />
+		</StackLayout>
+	</StackLayout>
+</ContentView>

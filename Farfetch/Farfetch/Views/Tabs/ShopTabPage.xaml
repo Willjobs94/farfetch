@@ -6,5 +6,45 @@
 	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.ShopTabPage"
-	Title="{Binding Title}">
+	Title="{Binding Title}"
+	x:Name="PageName">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:DecimalValueConverter
+				x:Key="decimalValueConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ListView
+		HasUnevenRows="true"
+		SeparatorVisibility="None"
+		ItemsSource="{Binding ShopItems}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<StackLayout
+						Padding="0,1,1,0"
+						BackgroundColor="#E5E5E5"
+						Orientation="Horizontal"
+						Spacing="2">
+						<local:ItemView
+							BindingContext="{Binding RightItem}">
+							<local:ItemView.GestureRecognizers>
+								<TapGestureRecognizer
+									Command="{Binding Path=BindingContext.ItemTappedCommand, Source={x:Reference PageName}}"
+									CommandParameter="{Binding}" />
+							</local:ItemView.GestureRecognizers>
+						</local:ItemView>
+						<local:ItemView
+							BindingContext="{Binding LeftItem}">
+							<local:ItemView.GestureRecognizers>
+								<TapGestureRecognizer
+									Command="{Binding Path=BindingContext.ItemTappedCommand, Source={x:Reference PageName}}"
+									CommandParameter="{Binding}" />
+							</local:ItemView.GestureRecognizers>
+						</local:ItemView>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
 </ContentPage>

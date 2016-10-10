@@ -79,6 +79,12 @@
       <DependentUpon>BoutiqueDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BoutiqueDetailPageViewModel.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Converters\DecimalValueConverter.cs" />
+    <Compile Include="CustomViews\ItemView.xaml.cs">
+      <DependentUpon>ItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -121,6 +127,9 @@
     <EmbeddedResource Include="Views\BoutiqueDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomViews\ItemView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MainPage.xaml">
@@ -136,6 +145,7 @@
     <Folder Include="Models\" />
     <Folder Include="CustomViews\" />
     <Folder Include="CustomCells\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Corcav.Behaviors">
