@@ -4,6 +4,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
+	xmlns:behaviors="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.BoutiqueTabPage"
 	Title="{Binding Title}">
@@ -39,7 +40,15 @@
 				ItemsSource="{Binding Boutiques}"
 				SeparatorVisibility="None"
 				HasUnevenRows="true"
+				SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
 				ItemTemplate="{StaticResource boutiqueTemplate}">
+				<behaviors:Interaction.Behaviors>
+					<behaviors:BehaviorCollection>
+						<behaviors:EventToCommand
+							EventName="ItemTapped"
+							Command="{Binding GoToDetailPageCommand}"/>
+					</behaviors:BehaviorCollection>
+				</behaviors:Interaction.Behaviors>
 			</ListView>
 		</StackLayout>
 	</StackLayout>

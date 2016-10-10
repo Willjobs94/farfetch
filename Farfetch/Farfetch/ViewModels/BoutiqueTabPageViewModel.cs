@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace Farfetch.ViewModels
 {
@@ -17,12 +18,6 @@ namespace Farfetch.ViewModels
 
 			Boutiques = new List<Boutique>
 			{
-				new Boutique 
-				{
-					ImageUri = "launchscreen",
-					Name = "11 BY BORIS BIDJAN SABERI NEW YORK",
-					ShortAddress = "New York, United States"
-				},
 				new Boutique
 				{
 					ImageUri = "launchscreen",
@@ -32,19 +27,26 @@ namespace Farfetch.ViewModels
 				new Boutique
 				{
 					ImageUri = "launchscreen",
-					Name = "11 BY BORIS BIDJAN SABERI NEW YORK",
+					Name = "12 BY BORIS BIDJAN SABERI NEW YORK",
+					ShortAddress = "New York, United States"
+				},
+				new Boutique
+				{
+					ImageUri = "launchscreen",
+					Name = "13 BY BORIS BIDJAN SABERI NEW YORK",
 					ShortAddress = "New York, United States"
 				}
 			};
 
 			BoutiquesCount = Boutiques.Count().ToString();
-			ItemTappedCommand = new DelegateCommand(OnItemTapped);
+			GoToDetailPageCommand = new DelegateCommand(GoToDetailPage);
 		}
+
 
 		private string _boutiquesCount;
 		public string BoutiquesCount
 		{
-			get { return _boutiquesCount;}
+			get { return _boutiquesCount; }
 			set { SetProperty(ref _boutiquesCount, value); }
 		}
 
@@ -52,11 +54,20 @@ namespace Farfetch.ViewModels
 
 		public IEnumerable<Boutique> Boutiques { get; set; }
 
-		public DelegateCommand ItemTappedCommand { get; set; }
-
-		void OnItemTapped()
+		public Boutique _selectedItem;
+		public Boutique SelectedItem
 		{
-			_navigationService.NavigateAsync("BoutiqueDetailPage");
+			get { return _selectedItem; }
+			set { SetProperty(ref _selectedItem, value); }
+		}
+
+		public DelegateCommand GoToDetailPageCommand { get; set; }
+
+		async void GoToDetailPage()
+		{
+			SelectedItem = null;
+			await _navigationService.NavigateAsync("BoutiqueDetailPage", null, true);
+			
 		}
 
 		private INavigationService _navigationService;
