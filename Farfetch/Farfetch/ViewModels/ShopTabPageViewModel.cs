@@ -62,9 +62,10 @@ namespace Farfetch.ViewModels
 		public string Title { get; set; }
 		public IEnumerable<ShopItem> ShopItems { get; set; }
 
-		void NavigateToItemDetail(Item item)
+		async void NavigateToItemDetail(Item item)
 		{
-			_navigationService.NavigateAsync("MainPage");
+			
+			await _navigationService.NavigateAsync("ItemDetailPage", null);
 		}
 
 		private INavigationService _navigationService;
