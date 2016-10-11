@@ -7,6 +7,6 @@ namespace FarFetch.API
 {
 	public interface ICatalogAPI
 	{
-		Task<IEnumerable<Catalog>> GetRecentCatalogs();
+		Task<IEnumerable<Catalog>> GetRecentCatalogsAsync();
 	}
 }

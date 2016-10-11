@@ -6,6 +6,6 @@ namespace FarFetch.API
 {
 	public interface IOfferAPI
 	{
-		Task<Offer> GetTodayOffer();
+		Task<Offer> GetTodayOfferAsync();
 	}
 }

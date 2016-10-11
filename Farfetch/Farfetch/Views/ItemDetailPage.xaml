@@ -11,6 +11,7 @@
 		<ResourceDictionary>
 			<local:DecimalValueConverter
 				x:Key="decimalValueConverter" />
+			<local:FormatedStringConverter x:Key = "formatedStringConverter"/>
 		</ResourceDictionary>
 	</ContentPage.Resources>
 	<StackLayout>
@@ -31,7 +32,7 @@
 					HorizontalOptions="Center"
 					Orientation="Horizontal">
 					<Label
-							FormattedText="{Binding CustomFormattedText}"
+							FormattedText="{Binding Price, Converter={StaticResource formatedStringConverter}}"
 						HorizontalTextAlignment="End">
 					</Label>
 				</StackLayout>

@@ -1,32 +1,41 @@
-﻿using Prism.Commands;
+﻿using FarFetch.API;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 
 namespace Farfetch.ViewModels
 {
-	public class BoutiqueDetailPageViewModel : BindableBase
+	public class BoutiqueDetailPageViewModel : BindableBase, INavigationAware
 	{
-		public BoutiqueDetailPageViewModel(INavigationService navigationService)
+		public BoutiqueDetailPageViewModel(INavigationService navigationService, IBoutiqueAPI boutiqueApi)
 		{
 			_navigationService = navigationService;
-			CloseCommand = new DelegateCommand(ClosePageAsync);
+			_boutiqueApi = boutiqueApi;
 
-			Name = "11 Boris Bidjan Saberi New York";
-			Address = "455 Greenwish Street, New York, United States";
-			ImageUri = "launchscreen";
-			Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-				"In diam est, tincidunt et lacus quis, luctus pellentesque dolor. Curabitur " +
-				"porttitor feugiat purus. Morbi efficitur vestibulum purus, a posuere magna. " +
-				"Sed et egestas libero. Morbi aliquet quam sit amet diam tempor, ut aliquet " +
-				"lectus pretium. Ut massa justo, dictum eu ipsum pharetra, sollicitudin suscipit " +
-				"metus. Maecenas in ullamcorper eros, ac ultricies dui. Proin quis nisi lacus. Cras " +
-				"porttitor neque nec aliquet laoreet.";
+			CloseCommand = new DelegateCommand(ClosePageAsync);
 		}
 
-		public string Name { get; set; }
-		public string Address { get; set; }
-		public string ImageUri { get; set; }
-		public string Description { get; set; }
+		public string Name
+		{
+			get { return _name; }
+			set { SetProperty(ref _name, value); }
+		}
+		public string Address
+		{
+			get { return _address; }
+			set { SetProperty(ref _address, value); }
+		}
+
+		public string ImageUri
+		{
+			get { return _imageUri; }
+			set { SetProperty(ref _imageUri, value); }
+		}
+		public string Description
+		{
+			get { return _description; }
+			set { SetProperty(ref _description, value); }
+		}
 
 		public DelegateCommand CloseCommand { get; set; }
 
@@ -35,6 +44,33 @@ namespace Farfetch.ViewModels
 			await _navigationService.GoBackAsync();
 		}
 
-		private INavigationService _navigationService;
+		async void GetOneAsync(int id)
+		{
+			var model = await _boutiqueApi.GetOneAsync(id);
+			if (model == null) return;
+			Name = model.Name;
+			Description = model.Description;
+			Address = model.Address;
+			ImageUri = model.ImageUri;
+		}
+
+		public void OnNavigatedFrom(NavigationParameters parameters)
+		{
+
+		}
+
+		public void OnNavigatedTo(NavigationParameters parameters)
+		{
+			var id = (int)parameters["id"];
+			GetOneAsync(id);
+		}
+
+		private string _name;
+		private string _address;
+		private string _imageUri;
+		private string _description;
+
+		private readonly INavigationService _navigationService;
+		private readonly IBoutiqueAPI _boutiqueApi;
 	}
 }

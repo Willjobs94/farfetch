@@ -7,8 +7,8 @@ namespace FarFetch.API
 {
 	public interface IBoutiqueAPI
 	{
-		Task<IEnumerable<BoutiqueItem>> GetAll();
+		Task<IEnumerable<BoutiqueItem>> GetAllAsync();
 
-		Task<Boutique> GetOne(int id);
+		Task<Boutique> GetOneAsync(int id);
 	}
 }

@@ -5,70 +5,45 @@ using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
 using Farfetch.DTO;
+using FarFetch.API;
 
 namespace Farfetch.ViewModels
 {
 	public class ShopTabPageViewModel : BindableBase
 	{
-		public ShopTabPageViewModel(INavigationService navigationService)
+		public ShopTabPageViewModel(INavigationService navigationService, IShopItemAPI shopItemApi)
 		{
 			_navigationService = navigationService;
-			ItemTappedCommand = new DelegateCommand<Item>(NavigateToItemDetailAsync);
+			_shopItemApi = shopItemApi;
+
 			Title = "SHOP";
-			ShopItems = new List<ShopItem>
-			{
-				new ShopItem
-				{
-					LeftItem = new Item
-					{
-						Name = "eftl 234233",
-						Description = "Description placeholder",
-						ImageUri = "blouse",
-						Price = 234
 
-					},
-					RightItem = new Item
-					{
-						Name = "rigsts tsdfest",
-						Description = "Description placeholder",
-						ImageUri = "blouse",
-						Price = 234
-
-					}
-				},
-
-				new ShopItem
-				{
-					LeftItem = new Item
-					{
-						Name = "Name test",
-						Description = "Description placeholder",
-						ImageUri = "blouse",
-						Price = 234
-
-					},
-					RightItem = new Item
-					{
-						Name = "Name test",
-						Description = "Description placeholder",
-						ImageUri = "blouse",
-						Price = 234
-
-					}
-				}
-			};
+			ItemTappedCommand = new DelegateCommand<Item>(NavigateToItemDetailAsync);
+			GetShopItemListAsync();
 		}
 
 		public DelegateCommand<Item> ItemTappedCommand { get; set; }
 		public string Title { get; set; }
-		public IEnumerable<ShopItem> ShopItems { get; set; }
+		public IEnumerable<ShopItem> ShopItems
+		{
+			get { return _shopItems; }
+			set { SetProperty(ref _shopItems, value); }
+		}
+
+		async void GetShopItemListAsync()
+		{
+			ShopItems = await _shopItemApi.GetAllAsync();
+		}
 
 		async void NavigateToItemDetailAsync(Item item)
 		{
-			await _navigationService.NavigateAsync("ItemDetailPage", null);
+			var param = new NavigationParameters();
+			param.Add("id", item.Id);
+			await _navigationService.NavigateAsync("ItemDetailPage", param);
 		}
 
-		private INavigationService _navigationService;
-
+		private IEnumerable<ShopItem> _shopItems;
+		private readonly INavigationService _navigationService;
+		private readonly IShopItemAPI _shopItemApi;
 	}
 }

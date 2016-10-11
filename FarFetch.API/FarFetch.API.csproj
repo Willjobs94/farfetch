@@ -33,9 +33,14 @@
     <Compile Include="Contracts\IBoutiqueAPI.cs" />
     <Compile Include="Contracts\ICatalogAPI.cs" />
     <Compile Include="Contracts\IShopAPI.cs" />
+    <Compile Include="FakeAPIs\BoutiqueAPI.cs" />
+    <Compile Include="FakeAPIs\ShopItemAPI.cs" />
+    <Compile Include="FakeAPIs\CatalogAPI.cs" />
+    <Compile Include="FakeAPIs\OfferAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
+    <Folder Include="FakeAPIs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Farfetch.DTO\Farfetch.DTO.csproj">

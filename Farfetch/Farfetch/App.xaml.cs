@@ -1,6 +1,8 @@
 ﻿using Prism.Unity;
 using Farfetch.Views;
 using Xamarin.Forms;
+using FarFetch.API;
+using Microsoft.Practices.Unity;
 
 namespace Farfetch
 {
@@ -20,15 +22,17 @@ namespace Farfetch
 			Container.RegisterTypeForNavigation<MainPage>();
 			Container.RegisterTypeForNavigation<BoutiqueDetailPage>();
 			Container.RegisterTypeForNavigation<ItemDetailPage>();
+			Container.RegisterTypeForNavigation<NavigationPage>();
 
 			Container.RegisterTypeForNavigation<MainTabbedPage>();
 			Container.RegisterTypeForNavigation<HomeTabPage>();
 			Container.RegisterTypeForNavigation<ShopTabPage>();
 			Container.RegisterTypeForNavigation<BoutiqueTabPage>();
 
-			Container.RegisterTypeForNavigation<NavigationPage>();
+			Container.RegisterType<IBoutiqueAPI, BoutiqueAPI>();
+			Container.RegisterType<IShopItemAPI, ShopItemAPI>();
+			Container.RegisterType<ICatalogAPI, CatalogAPI>();
+			Container.RegisterType<IOfferAPI, OfferAPI>();
 		}
-
-
 	}
 }
