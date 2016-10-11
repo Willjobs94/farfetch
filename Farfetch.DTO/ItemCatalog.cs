@@ -1,4 +1,4 @@
-﻿namespace Farfetch
+﻿namespace Farfetch.DTO
 {
 	public class ItemCatalog
 	{

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Farfetch.DTO;
 using Xamarin.Forms;
 
 namespace Farfetch
@@ -9,7 +9,7 @@ namespace Farfetch
 		{
 			_defaultMiniCatalogViewCellTemplate = new DataTemplate(typeof(DefaultMiniCatalogViewCell));
 			_lastMiniCatalogViewCellTemplate = new DataTemplate(typeof(LastMiniCatalogViewCell));
-			
+
 		}
 
 		protected override DataTemplate OnSelectTemplate(object item, BindableObject container)

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Farfetch.DTO;
 using Prism.Mvvm;
 
 namespace Farfetch.ViewModels
