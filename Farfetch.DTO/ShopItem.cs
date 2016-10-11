@@ -1,5 +1,4 @@
-﻿using System;
-namespace Farfetch
+﻿namespace Farfetch
 {
 	public class ShopItem
 	{
