@@ -39,7 +39,7 @@ namespace Farfetch.ViewModels
 			};
 
 			BoutiquesCount = Boutiques.Count().ToString();
-			GoToDetailPageCommand = new DelegateCommand(GoToDetailPage);
+			GoToDetailPageCommand = new DelegateCommand(GoToDetailPageAsync);
 		}
 
 
@@ -63,7 +63,7 @@ namespace Farfetch.ViewModels
 
 		public DelegateCommand GoToDetailPageCommand { get; set; }
 
-		async void GoToDetailPage()
+		async void GoToDetailPageAsync()
 		{
 			SelectedItem = null;
 			await _navigationService.NavigateAsync("BoutiqueDetailPage", null, true);

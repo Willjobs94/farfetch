@@ -12,8 +12,8 @@ namespace Farfetch.ViewModels
 		public MainPageViewModel(INavigationService navigationService)
 		{
 			_navigationService = navigationService;
-			SignInCommand = new DelegateCommand(NavigateToTabbedPage);
-			RegisterCommand = new DelegateCommand(NavigateToTabbedPage);
+			SignInCommand = new DelegateCommand(NavigateToTabbedPageAsync);
+			RegisterCommand = new DelegateCommand(NavigateToTabbedPageAsync);
 
 		}
 
@@ -29,9 +29,9 @@ namespace Farfetch.ViewModels
 		{
 		}
 
-		void NavigateToTabbedPage()
+		async void NavigateToTabbedPageAsync()
 		{
-			_navigationService.NavigateAsync("MainTabbedPage");
+			await _navigationService.NavigateAsync("MainTabbedPage");
 		}
 
 		private INavigationService _navigationService;

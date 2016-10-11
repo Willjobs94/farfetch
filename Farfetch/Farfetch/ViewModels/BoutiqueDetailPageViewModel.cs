@@ -12,7 +12,7 @@ namespace Farfetch.ViewModels
 		public BoutiqueDetailPageViewModel(INavigationService navigationService)
 		{
 			_navigationService = navigationService;
-			CloseCommand = new DelegateCommand(ClosePage);
+			CloseCommand = new DelegateCommand(ClosePageAsync);
 
 			Name = "11 Boris Bidjan Saberi New York";
 			Address = "455 Greenwish Street, New York, United States";
@@ -33,7 +33,7 @@ namespace Farfetch.ViewModels
 
 		public DelegateCommand CloseCommand { get; set; }
 
-		async void ClosePage()
+		async void ClosePageAsync()
 		{
 			await _navigationService.GoBackAsync();
 		}

@@ -12,7 +12,7 @@ namespace Farfetch.ViewModels
 		public ShopTabPageViewModel(INavigationService navigationService)
 		{
 			_navigationService = navigationService;
-			ItemTappedCommand = new DelegateCommand<Item>(NavigateToItemDetail);
+			ItemTappedCommand = new DelegateCommand<Item>(NavigateToItemDetailAsync);
 			Title = "SHOP";
 			ShopItems = new List<ShopItem>
 			{
@@ -62,7 +62,7 @@ namespace Farfetch.ViewModels
 		public string Title { get; set; }
 		public IEnumerable<ShopItem> ShopItems { get; set; }
 
-		async void NavigateToItemDetail(Item item)
+		async void NavigateToItemDetailAsync(Item item)
 		{
 			
 			await _navigationService.NavigateAsync("ItemDetailPage", null);
