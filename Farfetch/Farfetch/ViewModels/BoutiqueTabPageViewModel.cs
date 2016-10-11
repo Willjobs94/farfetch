@@ -17,21 +17,21 @@ namespace Farfetch.ViewModels
 
 			Title = "BOUTIQUES";
 
-			Boutiques = new List<Boutique>
+			Boutiques = new List<BoutiqueItem>
 			{
-				new Boutique
+				new BoutiqueItem
 				{
 					ImageUri = "launchscreen",
 					Name = "11 BY BORIS BIDJAN SABERI NEW YORK",
 					ShortAddress = "New York, United States"
 				},
-				new Boutique
+				new BoutiqueItem
 				{
 					ImageUri = "launchscreen",
 					Name = "12 BY BORIS BIDJAN SABERI NEW YORK",
 					ShortAddress = "New York, United States"
 				},
-				new Boutique
+				new BoutiqueItem
 				{
 					ImageUri = "launchscreen",
 					Name = "13 BY BORIS BIDJAN SABERI NEW YORK",
@@ -53,7 +53,7 @@ namespace Farfetch.ViewModels
 
 		public string Title { get; set; }
 
-		public IEnumerable<Boutique> Boutiques { get; set; }
+		public IEnumerable<BoutiqueItem> Boutiques { get; set; }
 
 		public Boutique _selectedItem;
 		public Boutique SelectedItem
