@@ -47,10 +47,7 @@
       <DependentUpon>BoutiqueTabPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\HomeTabPageViewModel.cs" />
-    <Compile Include="Models\ItemCatalog.cs" />
-    <Compile Include="Models\Catalog.cs" />
     <Compile Include="ViewModels\BoutiqueTabPageViewModel.cs" />
-    <Compile Include="Models\Boutique.cs" />
     <Compile Include="CustomViews\MiniCatalogView.xaml.cs">
       <DependentUpon>MiniCatalogView.xaml</DependentUpon>
     </Compile>
@@ -61,7 +58,6 @@
       <DependentUpon>ShopTabPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ShopTabPageViewModel.cs" />
-    <Compile Include="Models\Offer.cs" />
     <Compile Include="CustomViews\OfferView.xaml.cs">
       <DependentUpon>OfferView.xaml</DependentUpon>
     </Compile>
@@ -79,12 +75,10 @@
       <DependentUpon>BoutiqueDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BoutiqueDetailPageViewModel.cs" />
-    <Compile Include="Models\Item.cs" />
     <Compile Include="Converters\DecimalValueConverter.cs" />
     <Compile Include="CustomViews\ItemView.xaml.cs">
       <DependentUpon>ItemView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopItem.cs" />
     <Compile Include="Views\ItemDetailPage.xaml.cs">
       <DependentUpon>ItemDetailPage.xaml</DependentUpon>
     </Compile>
@@ -149,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Tabs\" />
-    <Folder Include="Models\" />
     <Folder Include="CustomViews\" />
     <Folder Include="CustomCells\" />
     <Folder Include="Converters\" />
@@ -185,6 +178,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Farfetch.DTO\Farfetch.DTO.csproj">
+      <Project>{744DCBBF-235B-447F-AB5C-022269C5D054}</Project>
+      <Name>Farfetch.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
