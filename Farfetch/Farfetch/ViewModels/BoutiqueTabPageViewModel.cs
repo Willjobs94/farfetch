@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
 using Xamarin.Forms;
+using Farfetch.DTO;
 
 namespace Farfetch.ViewModels
 {
