@@ -4,57 +4,90 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
+using Prism.Navigation;
+using FarFetch.API;
 
 namespace Farfetch.ViewModels
 {
-	public class ItemDetailPageViewModel : BindableBase
+	public class ItemDetailPageViewModel : BindableBase, INavigationAware
 	{
-		public ItemDetailPageViewModel()
+		public ItemDetailPageViewModel(IShopItemAPI shopItemApi)
 		{
+			_shopItemApi = shopItemApi;
+
 			Title = "DETAIL";
-			Description = "Lorem ipsum dolor sit amet, consectetur " +
-				"adipiscing elit. Duis a purus eu magna posuere porttitor " +
-				"in a felis. Donec egestas, eros in scelerisque sodales, dui " +
-				"est laoreet eros, nec cursus justo elit et ligula. entum eros " +
-				"nisl, id accumsan quam lacinia quis. Morbi scelerisque " +
-				"ornare neque sit amet interdum.";
-			ImageUri = "jacket";
-			Brand = "COURRÈGES";
-			Name = "denim jacket";
-			Price = 234;
+		}
+		public string Title { get; set; }
+
+		public string Brand
+		{
+			get { return _brand; }
+			set { SetProperty(ref _brand, value); }
+		}
+		public string Name 
+		{
+			get { return _name; }
+			set { SetProperty(ref _name, value); }
+		}
+			
+		public string ImageUri
+		{
+			get { return _imageUri; }
+			set { SetProperty(ref _imageUri, value); }
 		}
 
-		public string Title { get; set; }
-		public string Brand { get; set; }
-		public string Name { get; set; }
-		public string ImageUri { get; set; }
-		public string Description { get; set; }
-		public decimal Price { get; set; }
-		public DelegateCommand AddToBagCommand { get; set; }
-
-		public FormattedString CustomFormattedText
+		public string Description 
 		{
-			get
-			{
-				return new FormattedString
-				{
-					Spans =
-					{
-						new Span
-						{
-							Text = "$" + Price,
-							ForegroundColor = Color.Black,
-							FontSize = 13 
-						},
-						new Span
-						{
-							ForegroundColor = Color.FromHex("#878787"),
-							Text = " (Import duties included)",
-							FontSize = 10
-						}
-					}
-				};
+			get { return _description; }
+			set { SetProperty(ref _description, value); }
+		}
+
+		public decimal Price 
+		{
+			get { return _price; }
+			set 
+			{ 
+				SetProperty(ref _price, value);
 			}
 		}
+
+		public DelegateCommand AddToBagCommand { get; set; }
+
+
+		public void OnNavigatedFrom(NavigationParameters parameters)
+		{
+
+		}
+
+		public void OnNavigatedTo(NavigationParameters parameters)
+		{
+			if (parameters.ContainsKey("id"))
+			{
+				var id = (int)parameters["id"];
+				GetOneAsync(id);
+			}
+		}
+
+		async void GetOneAsync(int id)
+		{
+			var model = await _shopItemApi.GetOneAsync(id);
+			if (model == null) return;
+			{
+				Name = model.Name;
+				Brand = model.Brand;
+				Description = model.Description;
+				ImageUri = model.ImageUri;
+				Price = model.Price;
+			}
+		}
+
+		private string _name;
+		private string _brand;
+		private string _imageUri;
+		private string _description;
+		private decimal _price;
+		private FormattedString _customFomatedTex;
+
+		private readonly IShopItemAPI _shopItemApi;
 	}
 }

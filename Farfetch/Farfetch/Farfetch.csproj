@@ -83,6 +83,7 @@
       <DependentUpon>ItemDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ItemDetailPageViewModel.cs" />
+    <Compile Include="Converters\FormatedStringConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -183,6 +184,10 @@
     <ProjectReference Include="..\..\Farfetch.DTO\Farfetch.DTO.csproj">
       <Project>{744DCBBF-235B-447F-AB5C-022269C5D054}</Project>
       <Name>Farfetch.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FarFetch.API\FarFetch.API.csproj">
+      <Project>{A3E1DD66-D9AD-4FC4-BFDA-9D8E962251CE}</Project>
+      <Name>FarFetch.API</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

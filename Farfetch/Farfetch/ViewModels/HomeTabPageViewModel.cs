@@ -1,105 +1,52 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Farfetch.DTO;
+using FarFetch.API;
 using Prism.Mvvm;
 
 namespace Farfetch.ViewModels
 {
 	public class HomeTabPageViewModel : BindableBase
 	{
-		public HomeTabPageViewModel()
+		public HomeTabPageViewModel(ICatalogAPI catalogApi, IOfferAPI offerApi)
 		{
+			_catalogApi = catalogApi;
+			_offerApi = offerApi;
+
 			Title = "Home";
-			Offer = new Offer
-			{
-				Title = "SALE | UP TO 50% OFF",
-				Category = "ACCESSORIES",
-				ImageUri = "accessories"
-			};
 
-			Catalogs = new List<Catalog>
-			{
-					new Catalog
-				{
-					Title = "NEW IN TODAY",
-					RightItemCatalog = new ItemCatalog
-					{
-						Name = "JACKET",
-						ImageUri = "jacket",
-						Price = 750
-					},
-					CenterItemCatalog = new ItemCatalog
-					{
-						Name = "BAG",
-						ImageUri = "bag",
-						Price = 460
-					},
-					LeftItemCatalog = new ItemCatalog
-					{
-						Name = "BLOUSE",
-						ImageUri = "blouse",
-						Price = 950
-					}
-				},
-				new Catalog
-				{
-					Title = "SUMMER 2016: THE HOT LIST",
-					RightItemCatalog = new ItemCatalog
-					{
-						Name = "COURRÈGES",
-						ImageUri = "courreges",
-						Price = 705
-					},
-					CenterItemCatalog = new ItemCatalog
-					{
-						Name = "CESARE PACIOTTI",
-						ImageUri = "paciotti",
-						Price = 562
-
-					},
-					LeftItemCatalog = new ItemCatalog
-					{
-						Name = "HOUSE OF HOLLAND",
-						ImageUri = "houseofholland",
-						Price = 388
-					}
-				},
-				new Catalog
-				{
-					Title = "MODERN CRAFT",
-					RightItemCatalog = new ItemCatalog
-					{
-						Name = "PINK BLOUSE",
-						ImageUri = "pinkblouse",
-						Price = 820
-					},
-					CenterItemCatalog = new ItemCatalog
-					{
-						Name = "GOLD EARRINGS",
-						ImageUri = "earrings",
-						Price = 600
-
-					},
-					LeftItemCatalog = new ItemCatalog
-					{
-						Name = "BUSINESS SKIRT",
-						ImageUri = "skirt",
-						Price = 500
-					},
-
-				}
-			
-
-			};
-
-			Catalogs.Last().IsLastItem = true;
-
+			GetTodayOfferAsync();
+			GetCatalogsAsync();
 		}
 
 		public string Title { get; set; }
-		public Offer Offer { get; set; }
 
-		public IEnumerable<Catalog> Catalogs { get; set; }
+		public Offer Offer
+		{
+			get { return _offer; }
+			set { SetProperty(ref _offer, value); }
+		}
 
+		public IEnumerable<Catalog> Catalogs
+		{
+			get { return _catalogs; }
+			set { SetProperty(ref _catalogs, value); }
+		}
+
+		async void GetTodayOfferAsync()
+		{
+			Offer = await _offerApi.GetTodayOfferAsync();
+		}
+
+		async void GetCatalogsAsync()
+		{
+			Catalogs = await _catalogApi.GetRecentCatalogsAsync();
+			Catalogs.Last().IsLastItem = true;
+		}
+
+		private Offer _offer;
+		private IEnumerable<Catalog> _catalogs;
+		private readonly ICatalogAPI _catalogApi;
+		private readonly IOfferAPI _offerApi;
 	}
 }

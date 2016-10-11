@@ -1,50 +1,26 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prism.Navigation;
-using Xamarin.Forms;
 using Farfetch.DTO;
+using FarFetch.API;
 
 namespace Farfetch.ViewModels
 {
 	public class BoutiqueTabPageViewModel : BindableBase
 	{
-		public BoutiqueTabPageViewModel(INavigationService navigationService)
+		public BoutiqueTabPageViewModel(INavigationService navigationService, IBoutiqueAPI boutiqueAPI)
 		{
 			_navigationService = navigationService;
+			_boutiqueApi = boutiqueAPI;
 
 			Title = "BOUTIQUES";
 
-			Boutiques = new List<BoutiqueItem>
-			{
-				new BoutiqueItem
-				{
-					ImageUri = "launchscreen",
-					Name = "11 BY BORIS BIDJAN SABERI NEW YORK",
-					ShortAddress = "New York, United States"
-				},
-				new BoutiqueItem
-				{
-					ImageUri = "launchscreen",
-					Name = "12 BY BORIS BIDJAN SABERI NEW YORK",
-					ShortAddress = "New York, United States"
-				},
-				new BoutiqueItem
-				{
-					ImageUri = "launchscreen",
-					Name = "13 BY BORIS BIDJAN SABERI NEW YORK",
-					ShortAddress = "New York, United States"
-				}
-			};
-
-			BoutiquesCount = Boutiques.Count().ToString();
+			GetBoutiqueAsync();
 			GoToDetailPageCommand = new DelegateCommand(GoToDetailPageAsync);
 		}
 
-
-		private string _boutiquesCount;
 		public string BoutiquesCount
 		{
 			get { return _boutiquesCount; }
@@ -53,10 +29,14 @@ namespace Farfetch.ViewModels
 
 		public string Title { get; set; }
 
-		public IEnumerable<BoutiqueItem> Boutiques { get; set; }
+		public IEnumerable<BoutiqueItem> Boutiques
+		{
+			get { return _boutiques; }
+			set { SetProperty(ref _boutiques, value); }
+		}
 
-		public Boutique _selectedItem;
-		public Boutique SelectedItem
+		public BoutiqueItem _selectedItem;
+		public BoutiqueItem SelectedItem
 		{
 			get { return _selectedItem; }
 			set { SetProperty(ref _selectedItem, value); }
@@ -64,13 +44,23 @@ namespace Farfetch.ViewModels
 
 		public DelegateCommand GoToDetailPageCommand { get; set; }
 
-		async void GoToDetailPageAsync()
+		async void GetBoutiqueAsync()
 		{
-			SelectedItem = null;
-			await _navigationService.NavigateAsync("BoutiqueDetailPage", null, true);			
+			Boutiques = await _boutiqueApi.GetAllAsync();
+			BoutiquesCount = Boutiques.Count().ToString();
 		}
 
-		private INavigationService _navigationService;
+		async void GoToDetailPageAsync()
+		{
+			var param = new NavigationParameters();
+			param.Add("id", SelectedItem.Id);
+			SelectedItem = null;
+			await _navigationService.NavigateAsync("BoutiqueDetailPage", param, true);
+		}
 
+		private string _boutiquesCount;
+		private IEnumerable<BoutiqueItem> _boutiques;
+		private readonly INavigationService _navigationService;
+		private readonly IBoutiqueAPI _boutiqueApi;
 	}
 }
