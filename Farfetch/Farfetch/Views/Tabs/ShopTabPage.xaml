@@ -8,12 +8,6 @@
 	x:Class="Farfetch.Views.ShopTabPage"
 	Title="{Binding Title}"
 	x:Name="PageName">
-	<ContentPage.Resources>
-		<ResourceDictionary>
-			<local:DecimalValueConverter
-				x:Key="decimalValueConverter" />
-		</ResourceDictionary>
-	</ContentPage.Resources>
 	<ListView
 		HasUnevenRows="true"
 		SeparatorVisibility="None"
