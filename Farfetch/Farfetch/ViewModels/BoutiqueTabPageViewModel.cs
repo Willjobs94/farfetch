@@ -66,8 +66,7 @@ namespace Farfetch.ViewModels
 		async void GoToDetailPageAsync()
 		{
 			SelectedItem = null;
-			await _navigationService.NavigateAsync("BoutiqueDetailPage", null, true);
-			
+			await _navigationService.NavigateAsync("BoutiqueDetailPage", null, true);			
 		}
 
 		private INavigationService _navigationService;

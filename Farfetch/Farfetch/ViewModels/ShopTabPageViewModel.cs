@@ -64,7 +64,6 @@ namespace Farfetch.ViewModels
 
 		async void NavigateToItemDetailAsync(Item item)
 		{
-			
 			await _navigationService.NavigateAsync("ItemDetailPage", null);
 		}
 
