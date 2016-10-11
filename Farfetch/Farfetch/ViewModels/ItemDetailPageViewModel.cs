@@ -50,11 +50,11 @@ namespace Farfetch.ViewModels
 						{
 							ForegroundColor = Color.FromHex("#878787"),
 							Text = " (Import duties included)",
-							FontSize = 10}
+							FontSize = 10
+						}
 					}
 				};
 			}
-			set { }
 		}
 	}
 }
