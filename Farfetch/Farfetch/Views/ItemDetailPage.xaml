@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
+	prism:ViewModelLocator.AutowireViewModel="True"
+	x:Class="Farfetch.Views.ItemDetailPage"
+	Title="{Binding Title}">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:DecimalValueConverter
+				x:Key="decimalValueConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<StackLayout>
+		<ScrollView>
+			<StackLayout
+				Spacing="3">
+				<Label
+					Text="{Binding Brand}"
+					FontSize="Large"
+					FontAttributes="Bold"
+					HorizontalTextAlignment="Center" />
+				<Label
+					Text="{Binding Name}"
+					FontSize="Small"
+					TextColor="#878787"
+					HorizontalTextAlignment="Center" />
+				<StackLayout
+					HorizontalOptions="Center"
+					Orientation="Horizontal">
+					<Label
+							FormattedText="{Binding CustomFormattedText}"
+						HorizontalTextAlignment="End">
+					</Label>
+				</StackLayout>
+				<StackLayout>
+					<RelativeLayout>
+						<Image
+							HorizontalOptions="StartAndExpand"
+							Aspect="Fill"
+							WidthRequest="370"
+							Source="{Binding ImageUri}"
+							HeightRequest="500" />
+						<StackLayout
+							Margin="25"
+							WidthRequest="320"
+							HorizontalOptions="CenterAndExpand">
+							<Button
+								Image="staricon"
+								WidthRequest="20"
+								HeightRequest="20"
+								HorizontalOptions="End" />
+						</StackLayout>
+					</RelativeLayout>
+				</StackLayout>
+				<StackLayout
+					Margin="20">
+					<Label
+						Text="Description"
+						FontSize="16" />
+					<BoxView
+						Color="#E6E6E6"
+						HeightRequest="2" />
+					<Label
+						Margin="0,15,0,0"
+						TextColor="#919191"
+						FontSize="15"
+						Text="{Binding Description}" />
+				</StackLayout>
+			</StackLayout>
+		</ScrollView>
+		<StackLayout
+			VerticalOptions="EndAndExpand">
+			<Button
+				BackgroundColor="#03A9F4"
+				Text="ADD TO BAG"
+				FontSize="17"
+				FontAttributes="Bold"
+				TextColor="White"
+				BorderRadius="0" />
+		</StackLayout>
+	</StackLayout>
+</ContentPage>

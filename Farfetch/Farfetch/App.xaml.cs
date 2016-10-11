@@ -19,6 +19,7 @@ namespace Farfetch
 		{
 			Container.RegisterTypeForNavigation<MainPage>();
 			Container.RegisterTypeForNavigation<BoutiqueDetailPage>();
+			Container.RegisterTypeForNavigation<ItemDetailPage>();
 
 			Container.RegisterTypeForNavigation<MainTabbedPage>();
 			Container.RegisterTypeForNavigation<HomeTabPage>();
