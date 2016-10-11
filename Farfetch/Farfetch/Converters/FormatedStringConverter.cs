@@ -6,10 +6,6 @@ namespace Farfetch
 {
 	public class FormatedStringConverter : IValueConverter
 	{
-		public FormatedStringConverter()
-		{
-		}
-
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
 
@@ -35,11 +31,7 @@ namespace Farfetch
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			if (!(value is FormattedString)) return value;
-			var castedValue = (FormattedString)value;
-			var text = castedValue.Spans[0].Text.Replace("$", "");
-			var convertedText = -1;
-			return Int32.TryParse(text, out convertedText);
+			return new NotImplementedException();
 		}
 	}
 }
