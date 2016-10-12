@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{744DCBBF-235B-447F-AB5C-022269C5D054}</ProjectGuid>
+    <ProjectGuid>{A3E1DD66-D9AD-4FC4-BFDA-9D8E962251CE}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
-    <RootNamespace>Farfetch.DTO</RootNamespace>
-    <AssemblyName>Farfetch.DTO</AssemblyName>
+    <RootNamespace>FarFetch.API</RootNamespace>
+    <AssemblyName>FarFetch.API</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
   </PropertyGroup>
@@ -29,13 +29,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Boutique.cs" />
-    <Compile Include="Catalog.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="ItemCatalog.cs" />
-    <Compile Include="Offer.cs" />
-    <Compile Include="ShopItem.cs" />
-    <Compile Include="BoutiqueItem.cs" />
+    <Compile Include="Contracts\IOfferAPI.cs" />
+    <Compile Include="Contracts\IBoutiqueAPI.cs" />
+    <Compile Include="Contracts\ICatalogAPI.cs" />
+    <Compile Include="Contracts\IShopAPI.cs" />
+    <Compile Include="FakeAPIs\BoutiqueAPI.cs" />
+    <Compile Include="FakeAPIs\ShopItemAPI.cs" />
+    <Compile Include="FakeAPIs\CatalogAPI.cs" />
+    <Compile Include="FakeAPIs\OfferAPI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="FakeAPIs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Farfetch.DTO\Farfetch.DTO.csproj">
+      <Project>{744DCBBF-235B-447F-AB5C-022269C5D054}</Project>
+      <Name>Farfetch.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
