@@ -86,7 +86,6 @@ namespace Farfetch.ViewModels
 		private string _imageUri;
 		private string _description;
 		private decimal _price;
-		private FormattedString _customFomatedTex;
 
 		private readonly IShopItemAPI _shopItemApi;
 	}
