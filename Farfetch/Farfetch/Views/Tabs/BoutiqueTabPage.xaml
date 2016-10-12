@@ -36,7 +36,6 @@
 		</StackLayout>
 		<StackLayout>
 			<ListView
-				x:Name="listView"
 				ItemsSource="{Binding Boutiques}"
 				SeparatorVisibility="None"
 				HasUnevenRows="true"
