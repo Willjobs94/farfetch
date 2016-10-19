@@ -8,7 +8,7 @@ using FarFetch.API;
 
 namespace Farfetch.ViewModels
 {
-	public class BoutiqueTabPageViewModel : BindableBase
+	public class BoutiqueTabPageViewModel : BaseViewModel
 	{
 		public BoutiqueTabPageViewModel(INavigationService navigationService, IBoutiqueAPI boutiqueAPI)
 		{
@@ -27,7 +27,6 @@ namespace Farfetch.ViewModels
 			set { SetProperty(ref _boutiquesCount, value); }
 		}
 
-		public string Title { get; set; }
 
 		public IEnumerable<BoutiqueItem> Boutiques
 		{

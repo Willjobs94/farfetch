@@ -9,7 +9,7 @@ using FarFetch.API;
 
 namespace Farfetch.ViewModels
 {
-	public class ShopTabPageViewModel : BindableBase
+	public class ShopTabPageViewModel : BaseViewModel
 	{
 		public ShopTabPageViewModel(INavigationService navigationService, IShopItemAPI shopItemApi)
 		{
@@ -23,7 +23,7 @@ namespace Farfetch.ViewModels
 		}
 
 		public DelegateCommand<Item> ItemTappedCommand { get; set; }
-		public string Title { get; set; }
+
 		public IEnumerable<ShopItem> ShopItems
 		{
 			get { return _shopItems; }

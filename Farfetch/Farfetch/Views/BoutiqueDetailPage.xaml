@@ -3,45 +3,60 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+	xmlns:local="clr-namespace:Farfetch;assembly=Farfetch"
 	prism:ViewModelLocator.AutowireViewModel="True"
 	x:Class="Farfetch.Views.BoutiqueDetailPage">
-	<StackLayout>
-		<StackLayout>
-			<RelativeLayout>
-				<Image
-					Source="{Binding ImageUri}"
-					WidthRequest="400"
-					HeightRequest="250"
-					Aspect="AspectFill" />
-				<Button
-					Command="{Binding CloseCommand}"
-					HeightRequest="30"
-					WidthRequest="30"
-					Margin="15, 20"
-					BackgroundColor="White"
-					Image="multiply"
-					BorderRadius="15" />
-			</RelativeLayout>
-		</StackLayout>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<local:InvertBooleanValueConverter
+				x:Key="invertBooleanValueConverter" />
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<RelativeLayout>
 		<StackLayout
-			Spacing="10"
-			Margin="15,10,15,10">
-			<Label
-				Text="{Binding Name}"
-				FontAttributes="None" />
+			IsVisible="{Binding IsBusy, Converter={StaticResource invertBooleanValueConverter}}">
+			<StackLayout>
+				<RelativeLayout>
+					<Image
+						Source="{Binding ImageUri}"
+						WidthRequest="400"
+						HeightRequest="250"
+						Aspect="AspectFill" />
+					<Button
+						Command="{Binding CloseCommand}"
+						HeightRequest="30"
+						WidthRequest="30"
+						Margin="15, 20"
+						BackgroundColor="White"
+						Image="multiply"
+						BorderRadius="15" />
+				</RelativeLayout>
+			</StackLayout>
+			<StackLayout
+				Spacing="10"
+				Margin="15,10,15,10">
+				<Label
+					Text="{Binding Name}"
+					FontAttributes="None" />
+				<Label
+					TextColor="#919191"
+					FontSize="15"
+					Text="{Binding Address}" />
+			</StackLayout>
+			<BoxView
+				Margin="15,5, 15, -8"
+				Color="#E6E6E6"
+				HeightRequest="2" />
 			<Label
 				TextColor="#919191"
+				Margin="15,10,15,0"
 				FontSize="15"
-				Text="{Binding Address}" />
+				Text="{Binding Description}" />
 		</StackLayout>
-		<BoxView
-			Margin="15,5, 15, -8"
-			Color="#E6E6E6"
-			HeightRequest="2" />
-		<Label
-			TextColor="#919191"
-			Margin="15,10,15,0"
-			FontSize="15"
-			Text="{Binding Description}" />
-	</StackLayout>
+		<ActivityIndicator
+			RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+			IsRunning="{Binding IsBusy}"
+			IsVisible="{Binding IsBusy}" />
+	</RelativeLayout>
 </ContentPage>

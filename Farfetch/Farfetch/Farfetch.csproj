@@ -84,6 +84,8 @@
     </Compile>
     <Compile Include="ViewModels\ItemDetailPageViewModel.cs" />
     <Compile Include="Converters\FormatedStringConverter.cs" />
+    <Compile Include="Converters\InvertBooleanValueConverter.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">

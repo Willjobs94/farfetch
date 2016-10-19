@@ -6,7 +6,7 @@ using Prism.Mvvm;
 
 namespace Farfetch.ViewModels
 {
-	public class HomeTabPageViewModel : BindableBase
+	public class HomeTabPageViewModel : BaseViewModel
 	{
 		public HomeTabPageViewModel(ICatalogAPI catalogApi, IOfferAPI offerApi)
 		{
@@ -18,8 +18,6 @@ namespace Farfetch.ViewModels
 			GetTodayOfferAsync();
 			GetCatalogsAsync();
 		}
-
-		public string Title { get; set; }
 
 		public Offer Offer
 		{
@@ -42,6 +40,7 @@ namespace Farfetch.ViewModels
 		{
 			Catalogs = await _catalogApi.GetRecentCatalogsAsync();
 			Catalogs.Last().IsLastItem = true;
+
 		}
 
 		private Offer _offer;

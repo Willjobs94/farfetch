@@ -11,76 +11,90 @@
 		<ResourceDictionary>
 			<local:DecimalValueConverter
 				x:Key="decimalValueConverter" />
-			<local:FormatedStringConverter x:Key = "formatedStringConverter"/>
+			<local:FormatedStringConverter
+				x:Key="formatedStringConverter" />
+			<local:InvertBooleanValueConverter
+				x:Key="invertBooleanValueConverter" />
 		</ResourceDictionary>
 	</ContentPage.Resources>
-	<StackLayout>
-		<ScrollView>
-			<StackLayout
-				Spacing="3">
-				<Label
-					Text="{Binding Brand}"
-					FontSize="Large"
-					FontAttributes="Bold"
-					HorizontalTextAlignment="Center" />
-				<Label
-					Text="{Binding Name}"
-					FontSize="Small"
-					TextColor="#878787"
-					HorizontalTextAlignment="Center" />
-				<StackLayout
-					HorizontalOptions="Center"
-					Orientation="Horizontal">
-					<Label
-							FormattedText="{Binding Price, Converter={StaticResource formatedStringConverter}}"
-						HorizontalTextAlignment="End">
-					</Label>
-				</StackLayout>
-				<StackLayout>
-					<RelativeLayout>
-						<Image
-							HorizontalOptions="StartAndExpand"
-							Aspect="Fill"
-							WidthRequest="370"
-							Source="{Binding ImageUri}"
-							HeightRequest="500" />
-						<StackLayout
-							Margin="25"
-							WidthRequest="320"
-							HorizontalOptions="CenterAndExpand">
-							<Button
-								Image="staricon"
-								WidthRequest="20"
-								HeightRequest="20"
-								HorizontalOptions="End" />
-						</StackLayout>
-					</RelativeLayout>
-				</StackLayout>
-				<StackLayout
-					Margin="20">
-					<Label
-						Text="Description"
-						FontSize="16" />
-					<BoxView
-						Color="#E6E6E6"
-						HeightRequest="2" />
-					<Label
-						Margin="0,15,0,0"
-						TextColor="#919191"
-						FontSize="15"
-						Text="{Binding Description}" />
-				</StackLayout>
-			</StackLayout>
-		</ScrollView>
+	<RelativeLayout>
 		<StackLayout
-			VerticalOptions="EndAndExpand">
-			<Button
-				BackgroundColor="#03A9F4"
-				Text="ADD TO BAG"
-				FontSize="17"
-				FontAttributes="Bold"
-				TextColor="White"
-				BorderRadius="0" />
+			RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+			IsVisible="{Binding IsBusy, Converter={StaticResource invertBooleanValueConverter}}"
+			Spacing="0">
+			<ScrollView>
+				<StackLayout
+					Spacing="3">
+					<Label
+						Text="{Binding Brand}"
+						FontSize="Large"
+						FontAttributes="Bold"
+						HorizontalTextAlignment="Center" />
+					<Label
+						Text="{Binding Name}"
+						FontSize="Small"
+						TextColor="#878787"
+						HorizontalTextAlignment="Center" />
+					<StackLayout
+						HorizontalOptions="Center"
+						Orientation="Horizontal">
+						<Label
+							FormattedText="{Binding Price, Converter={StaticResource formatedStringConverter}}"
+							HorizontalTextAlignment="End">
+						</Label>
+					</StackLayout>
+					<StackLayout>
+						<RelativeLayout>
+							<Image
+								HorizontalOptions="StartAndExpand"
+								Aspect="AspectFit"
+								WidthRequest="375"
+								Source="{Binding ImageUri}"
+								HeightRequest="500" />
+							<StackLayout
+								Margin="25"
+								WidthRequest="320"
+								HorizontalOptions="CenterAndExpand">
+								<Button
+									Image="staricon"
+									WidthRequest="20"
+									HeightRequest="20"
+									HorizontalOptions="End" />
+							</StackLayout>
+						</RelativeLayout>
+					</StackLayout>
+					<StackLayout
+						Margin="10">
+						<Label
+							Text="Description"
+							FontSize="16" />
+						<BoxView
+							Color="#E6E6E6"
+							HeightRequest="2" />
+						<Label
+							Margin="0,15,0,0"
+							TextColor="#919191"
+							FontSize="15"
+							Text="{Binding Description}" />
+					</StackLayout>
+				</StackLayout>
+			</ScrollView>
+			<StackLayout
+				BackgroundColor="Aqua"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+				<Button
+					BackgroundColor="#03A9F4"
+					Text="ADD TO BAG"
+					FontSize="17"
+					FontAttributes="Bold"
+					TextColor="White"
+					BorderRadius="0" />
+			</StackLayout>
 		</StackLayout>
-	</StackLayout>
+		<ActivityIndicator
+			RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+			IsVisible="{Binding IsBusy}"
+			IsRunning="{Binding IsBusy}" />
+	</RelativeLayout>
 </ContentPage>
