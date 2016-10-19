@@ -5,8 +5,7 @@
 	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
 	xmlns:views="clr-namespace:Farfetch.Views;assembly=Farfetch"
 	prism:ViewModelLocator.AutowireViewModel="True"
-	x:Class="Farfetch.Views.MainTabbedPage"
-	>
+	x:Class="Farfetch.Views.MainTabbedPage">
 	<NavigationPage
 		Title="Home"
 		Icon="farfetchicon">

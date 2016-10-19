@@ -5,13 +5,13 @@ using Prism.Navigation;
 
 namespace Farfetch.ViewModels
 {
-	public class BoutiqueDetailPageViewModel : BindableBase, INavigationAware
+	public class BoutiqueDetailPageViewModel : BaseViewModel, INavigationAware
 	{
 		public BoutiqueDetailPageViewModel(INavigationService navigationService, IBoutiqueAPI boutiqueApi)
 		{
 			_navigationService = navigationService;
 			_boutiqueApi = boutiqueApi;
-
+			IsBusy = true;
 			CloseCommand = new DelegateCommand(ClosePageAsync);
 		}
 
@@ -63,6 +63,7 @@ namespace Farfetch.ViewModels
 		{
 			var id = (int)parameters["id"];
 			GetOneAsync(id);
+			IsBusy = false;
 		}
 
 		private string _name;

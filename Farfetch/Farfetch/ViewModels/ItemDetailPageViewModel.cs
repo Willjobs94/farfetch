@@ -9,15 +9,15 @@ using FarFetch.API;
 
 namespace Farfetch.ViewModels
 {
-	public class ItemDetailPageViewModel : BindableBase, INavigationAware
+	public class ItemDetailPageViewModel : BaseViewModel, INavigationAware
 	{
 		public ItemDetailPageViewModel(IShopItemAPI shopItemApi)
 		{
 			_shopItemApi = shopItemApi;
 
 			Title = "DETAIL";
+			IsBusy = true;
 		}
-		public string Title { get; set; }
 
 		public string Brand
 		{
@@ -65,6 +65,7 @@ namespace Farfetch.ViewModels
 			{
 				var id = (int)parameters["id"];
 				GetOneAsync(id);
+				IsBusy = false;
 			}
 		}
 
